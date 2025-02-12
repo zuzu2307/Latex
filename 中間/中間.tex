@@ -56,7 +56,7 @@
 
 
 \section{Introduction}
-Virtual reality (VR) enhances immersion through multi-sensory feedback, with haptic feedback bridging the virtual and physical worlds. While traditional VR focuses on visual and auditory cues, rendering virtual textures through touch remains challenging. Many methods use hand-held devices, restricting natural hand movements. This research introduces a haptic glove with flex sensors, an MPU, and a coin motor, enabling texture perception at three vibration frequencies, offering a more intuitive and immersive tactile experience in VR.
+Virtual reality (VR) enhances immersion through multi-sensory feedback, with haptic feedback bridging the virtual and physical worlds. While traditional VR focuses on visual and auditory cues, rendering virtual textures through touch remains challenging. Many methods use hand-held devices, restricting natural hand movements. This research introduces a haptic glove with flex sensors, an MPU, and a coin motor, enabling texture perception at three vibration granularities, offering a more intuitive and immersive tactile experience in VR.
 
 \section{Previous Methods}
 Deep-Texture[1] is a foldable device for rendering shape and texture in VR. Using a linear resonant actuator and a 1-bar mechanism, it delivers lightweight, effective haptic feedback. Pilot tests show improved user experience. The next study[2] introduced audio-based vibrotactile feedback in VR, enhancing realism and user experience. Multimodal feedback was preferred, supporting immersive interactions. Future work will explore real-time synthesis based on virtual object properties.
@@ -65,30 +65,30 @@ Deep-Texture[1] is a foldable device for rendering shape and texture in VR. Usin
 Our proposed device is a sensor-equipped glove designed to enable finger tracking while delivering realistic haptic feedback. The glove integrates multiple key components to enhance interaction and immersion. Flex sensors are attached to each finger, allowing the system to detect bending and movement, accurately measuring the degree of flexion to interpret finger gestures in real time. An Inertial Measurement Unit (IMU), specifically an MPU, is embedded to track hand orientation, acceleration, and rotation, enabling motion capture and seamless interaction within virtual environments. Micro-vibration motors are placed within the glove to enhance tactile realism and provide haptic feedback, generating subtle vibrations that simulate textures during virtual interactions.
 
 \section{Experimental Setup}
-We involved six male participants in their 20s, who conducted two experiments to evaluate haptic feedback perception. The haptic feedback frequencies in this experiment were generated using the Pulse Width Modulation (PWM) method at three different cycle rates: 20 cycles, 50 cycles, and 100 cycles, each representing a distinct texture sensation. The experimental setup involves the following steps: \par
-In the first experiment, participants conducted a blind test to distinguish between three haptic feedback frequencies. Before starting, they were introduced to all three frequencies. A white 3D plane then appeared in the virtual environment, randomly generating one of the frequencies upon contact with the virtual hand. Participants identified the perceived frequency, repeating the process 15 times to assess their ability to differentiate between them.\par
-The second experiment explored the relationship between haptic feedback frequencies and texture perception. Participants interacted with a textured 3D plane (brick, grass, or marble), each generating three different haptic feedback frequencies. After experiencing all three frequencies for a given texture, they selected the one they felt best matched the material before proceeding to the next texture.\par
+We involved six male participants in their 20s, who conducted two experiments to evaluate haptic feedback perception. The haptic feedback in this experiment were generated using the Pulse Width Modulation (PWM) method at three different cycle rates: 20 cycles, 50 cycles, and 100 cycles, each representing a distinct texture sensation. The experimental setup involves the following steps: \par
+In the first experiment, participants conducted a blind test to distinguish between three different haptic feedback. Before starting, they were introduced to all three granularities. A white 3D plane then appeared in the virtual environment, randomly generating one of the granularities upon contact with the virtual hand. Participants identified the perceived frequency, repeating the process 15 times to assess their ability to differentiate between them.\par
+The second experiment explored the relationship between haptic feedback granularities and texture perception. Participants interacted with a textured 3D plane (brick, grass, or marble), each generating three different haptic feedback granularities. After experiencing all three granularities for a given texture, they selected the one they felt best matched the material before proceeding to the next texture.\par
 After completing an evaluation questionnaire after the experiments. 					
 
 \section{Results}
-The results indicate that in the blind test involving three haptic feedback frequencies, participants were able to distinguish between the lowest frequency (20 cycles) and the highest frequency (100 cycles), as shown in Fig. 1. However, the scores for the middle frequency (50 cycles) were similar to those of the lowest frequency. Some participants noted that 'the glove is too big for my hand, making it difficult to identify the frequencies accurately.' This may be due to the use of a standard glove with an attached component, which cannot be adjusted to fit every hand.\par
+The results indicate that in the blind test involving three haptic feedback granularities, participants were able to distinguish between the lowest granularity (20 cycles) and the highest granularity (100 cycles), as shown in Fig. 1. However, the scores for the middle granularity (50 cycles) were similar to those of the lowest frequency. Some participants noted that 'the glove is too big for my hand, making it difficult to identify the granularities accurately.' This may be due to the use of a standard glove with an attached component, which cannot be adjusted to fit every hand.\par
 the result of second experiment as shown in fig.2. For Marble which represent the smoothest material is compatible with 100 cycle while the grass is likely to 50 duty cycle and for the last one that represent the least smoothness is 20 and 50 duty cycle is equal
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.35\textwidth]{./Fig/Blind_Test_graph.png}
-  \caption{{Result of Blind Test Frequencies}}
+  \caption{{Result of First Experiment}}
   \label{fig1}
   \vspace{0.1cm}
   \centering
   \includegraphics[width=0.35\textwidth]{./Fig/Select_Cycle_graph.png}
-  \caption{{Result of Frequencies Compatible}}
+  \caption{{Result of Second Experiment}}
   \label{fig2}
 \end{figure}
 
 
 \section{Conclusion}
-The results show that participants could distinguish between the lowest (20 cycles) and highest (100 cycles) haptic frequencies, but not the middle (50 cycles), possibly due to glove fit issues. Additionally, material smoothness influenced duty cycle compatibility, with marble aligning with 100 cycles, grass with 50 cycles, and the roughest material showing no clear preference between 20 cycles and 50 cycles. These findings highlight the role of both frequency and material in haptic feedback effectiveness.
+The results show that participants could distinguish between the lowest (20 cycles) and highest (100 cycles) haptic granularities, but not the middle (50 cycles), possibly due to glove fit issues. Additionally, material smoothness influenced duty cycle compatibility, with marble aligning with 100 cycles, grass with 50 cycles, and the roughest material showing no clear preference between 20 cycles and 50 cycles. These findings highlight the role of both frequency and material in haptic feedback effectiveness.
 \begin{thebibliography}{99}
 \scriptsize
     \bibitem{sdn1} Y. Sung, D. Kwak, T. Kim, W. Woo and S. H. Yoon, "Deep-Texture: A Lightweight Wearable Ring for Shape and Texture Rendering in Virtual Reality," 2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW), Orlando, FL, USA, 2024, pp. 911-912
