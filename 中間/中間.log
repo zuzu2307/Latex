@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.18)  12 FEB 2025 12:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.18)  12 FEB 2025 13:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -108,6 +108,11 @@ Package caption Info: Standard document class detected.
 \c@continuedfloat=\count278
 ) (c:/texlive/2024/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
+) (c:/texlive/2024/texmf-dist/tex/latex/titling/titling.sty
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip60
+\thanksmargin=\skip61
+\droptitle=\skip62
 ) (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count279
@@ -115,20 +120,20 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (./中間.aux)
 \openout1 = `中間.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count280
@@ -185,22 +190,22 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 45.
+(Font)              <12> on input line 46.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 45.
+(Font)              <8> on input line 46.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 45.
+(Font)              <6> on input line 46.
 
 
 <./Fig/Blind_Test_graph.png, id=1, 362.007pt x 217.467pt>
 File: ./Fig/Blind_Test_graph.png Graphic file (type png)
 <use ./Fig/Blind_Test_graph.png>
-Package pdftex.def Info: ./Fig/Blind_Test_graph.png  used on input line 76.
+Package pdftex.def Info: ./Fig/Blind_Test_graph.png  used on input line 79.
 (pdftex.def)             Requested size: 175.23616pt x 105.26894pt.
 <./Fig/Select_Cycle_graph.png, id=2, 362.664pt x 217.467pt>
 File: ./Fig/Select_Cycle_graph.png Graphic file (type png)
 <use ./Fig/Select_Cycle_graph.png>
-Package pdftex.def Info: ./Fig/Select_Cycle_graph.png  used on input line 81.
+Package pdftex.def Info: ./Fig/Select_Cycle_graph.png  used on input line 84.
 (pdftex.def)             Requested size: 175.23616pt x 105.07979pt.
 
 
@@ -214,15 +219,15 @@ L3 programming layer <2024-11-02>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3567 strings out of 473330
- 62157 string characters out of 5723877
- 469581 words of memory out of 5000000
- 26705 multiletter control sequences out of 15000+600000
- 562019 words of font info for 49 fonts, out of 8000000 for 9000
+ 3642 strings out of 473330
+ 63393 string characters out of 5723877
+ 470440 words of memory out of 5000000
+ 26776 multiletter control sequences out of 15000+600000
+ 562018 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,11n,65p,843b,343s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on 中間.pdf (1 page, 162274 bytes).
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on 中間.pdf (1 page, 160263 bytes).
 PDF statistics:
  37 PDF objects out of 1000 (max. 8388607)
  19 compressed objects within 1 object stream

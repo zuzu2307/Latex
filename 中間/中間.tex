@@ -5,6 +5,7 @@
 \usepackage{fancyhdr}
 \usepackage[skip=2pt]{caption}
 \usepackage{indentfirst} 
+\usepackage{titling}
 
 % Adjust the margins to use the full space of A4 paper
 \geometry{
@@ -34,11 +35,11 @@
 
 
 \pagestyle{plain}
-
-\title{\normalsize\textbf{\vspace{-2ex}The Development of Haptic Feedback Data Glove for Enhancing Immersion in VR Experiences}}
+\setlength{\droptitle}{-4em}     % Eliminate the default vertical space
+\addtolength{\droptitle}{-2pt}   % Only a guess. Use this for adjustment
+\title{\textbf{The Development of Haptic Feedback Data Glove for Enhancing Immersion in VR Experiences}}
 \author{\small{Korntawat Witchuvanit (Information Engineering)}}
-\date{}
-
+\date{\vspace{-3em}}
 
 \begin{document}
 \small
@@ -51,6 +52,8 @@
   {0.3ex \@plus 0.2ex}%  % Adjust the spacing after the section title
   {\normalfont\small\bfseries}}
 \makeatother
+
+
 
 \section{Introduction}
 Virtual reality (VR) enhances immersion through multi-sensory feedback, with haptic feedback bridging the virtual and physical worlds. While traditional VR focuses on visual and auditory cues, rendering virtual textures through touch remains challenging. Many methods use hand-held devices, restricting natural hand movements. This research introduces a haptic glove with flex sensors, an MPU, and a coin motor, enabling texture perception at three vibration frequencies, offering a more intuitive and immersive tactile experience in VR.
