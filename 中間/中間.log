@@ -1,16 +1,12 @@
-<<<<<<< Updated upstream:中間/中間.log
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.18)  12 FEB 2025 15:44
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.9)  11 FEB 2025 02:16
->>>>>>> Stashed changes:中間.log
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.9)  13 FEB 2025 13:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**e:/Vee/Work/Latex_Paper/Latex/中間/中間
-(e:/Vee/Work/Latex_Paper/Latex/中間/中間.tex
-LaTeX2e <2024-11-01> patch level 1
-L3 programming layer <2024-11-02>
+**c:/Work/Latex_Paper/Latex/中間/中間
+(c:/Work/Latex_Paper/Latex/中間/中間.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
 (c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
 (c:/texlive/2024/texmf-dist/tex/latex/base/size10.clo
@@ -84,16 +80,22 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layoutvoffset=\dimen164
 \Gm@dimlist=\toks18
 ) (c:/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2024/12/09 v4.5 Extensive control of page headers and footers
+Package: fancyhdr 2025/01/07 v5.1.1 Extensive control of page headers and footers
 \f@nch@headwidth=\skip51
-\f@nch@O@elh=\skip52
-\f@nch@O@erh=\skip53
-\f@nch@O@olh=\skip54
-\f@nch@O@orh=\skip55
-\f@nch@O@elf=\skip56
-\f@nch@O@erf=\skip57
-\f@nch@O@olf=\skip58
-\f@nch@O@orf=\skip59
+\f@nch@offset@elh=\skip52
+\f@nch@offset@erh=\skip53
+\f@nch@offset@olh=\skip54
+\f@nch@offset@orh=\skip55
+\f@nch@offset@elf=\skip56
+\f@nch@offset@erf=\skip57
+\f@nch@offset@olf=\skip58
+\f@nch@offset@orf=\skip59
+\f@nch@height=\skip60
+\f@nch@footalignment=\skip61
+\f@nch@widthL=\skip62
+\f@nch@widthC=\skip63
+\f@nch@widthR=\skip64
+\@temptokenb=\toks19
 ) (c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
  (c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
@@ -114,9 +116,9 @@ Package caption Info: Standard document class detected.
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
 ) (c:/texlive/2024/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
-\thanksmarkwidth=\skip60
-\thanksmargin=\skip61
-\droptitle=\skip62
+\thanksmarkwidth=\skip65
+\thanksmargin=\skip66
+\droptitle=\skip67
 ) (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count279
@@ -145,12 +147,12 @@ LaTeX Font Info:    ... okay on input line 44.
 \scratchbox=\box53
 \nofMPsegments=\count281
 \nofMParguments=\count282
-\everyMPshowfont=\toks19
+\everyMPshowfont=\toks20
 \MPscratchCnt=\count283
 \MPscratchDim=\dimen174
 \MPnumerator=\count284
 \makeMPintoPDFobject=\count285
-\everyMPtoPDFconversion=\toks20
+\everyMPtoPDFconversion=\toks21
 ) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -200,27 +202,22 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 46.
 
+Underfull \hbox (badness 3098) in paragraph at lines 59--60
+[]\OT1/cmr/m/n/9 Virtual re-al-ity (VR) pro-vides im-mer-sive ex-pe-ri-ences
+ []
+
+
 
 <./Fig/Blind_Test_graph.png, id=1, 362.007pt x 217.467pt>
 File: ./Fig/Blind_Test_graph.png Graphic file (type png)
 <use ./Fig/Blind_Test_graph.png>
-<<<<<<< Updated upstream:中間/中間.log
-Package pdftex.def Info: ./Fig/Blind_Test_graph.png  used on input line 79.
+Package pdftex.def Info: ./Fig/Blind_Test_graph.png  used on input line 78.
 (pdftex.def)             Requested size: 175.23616pt x 105.26894pt.
 <./Fig/Select_Cycle_graph.png, id=2, 362.664pt x 217.467pt>
 File: ./Fig/Select_Cycle_graph.png Graphic file (type png)
 <use ./Fig/Select_Cycle_graph.png>
-Package pdftex.def Info: ./Fig/Select_Cycle_graph.png  used on input line 84.
+Package pdftex.def Info: ./Fig/Select_Cycle_graph.png  used on input line 83.
 (pdftex.def)             Requested size: 175.23616pt x 105.07979pt.
-=======
-Package pdftex.def Info: ./Fig/Blind_Test_graph.png  used on input line 76.
-(pdftex.def)             Requested size: 200.26335pt x 120.30403pt.
-<./Fig/Select_Cycle_graph.png, id=2, 362.664pt x 217.467pt>
-File: ./Fig/Select_Cycle_graph.png Graphic file (type png)
-<use ./Fig/Select_Cycle_graph.png>
-Package pdftex.def Info: ./Fig/Select_Cycle_graph.png  used on input line 81.
-(pdftex.def)             Requested size: 200.26335pt x 120.08504pt.
->>>>>>> Stashed changes:中間.log
 
 
 [1{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
@@ -228,29 +225,23 @@ Package pdftex.def Info: ./Fig/Select_Cycle_graph.png  used on input line 81.
 
  <./Fig/Blind_Test_graph.png> <./Fig/Select_Cycle_graph.png>] (./中間.aux)
  ***********
-LaTeX2e <2024-11-01> patch level 1
-L3 programming layer <2024-11-02>
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3642 strings out of 473330
- 63393 string characters out of 5723877
- 471458 words of memory out of 5000000
- 26776 multiletter control sequences out of 15000+600000
- 562018 words of font info for 49 fonts, out of 8000000 for 9000
+ 3725 strings out of 473201
+ 64957 string characters out of 5720300
+ 475636 words of memory out of 5000000
+ 26978 multiletter control sequences out of 15000+600000
+ 562786 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
-<<<<<<< Updated upstream:中間/中間.log
- 57i,11n,65p,843b,343s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on 中間.pdf (1 page, 160041 bytes).
-=======
- 57i,11n,65p,832b,343s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on 中間.pdf (1 page, 162272 bytes).
->>>>>>> Stashed changes:中間.log
+ 57i,11n,65p,790b,343s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on 中間.pdf (1 page, 172901 bytes).
 PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
+ 42 PDF objects out of 1000 (max. 8388607)
+ 22 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
