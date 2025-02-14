@@ -56,38 +56,40 @@
 
 
 \section{Introduction}
-Virtual reality (VR) provides immersive experiences through multisensory feedback, enhancing user interaction with digital environments. One key aspect of immersion is texture rendering, which is commonly achieved through visual and auditory cues. However, incorporating haptic feedback for realistic texture perception remains a challenge. While haptic feedback has become a mainstream approach, most existing methods rely on hand-held devices, often limiting natural hand movements. This research explores the development and performance of a haptic glove equipped with flex sensors, an Motion Processing Unit (MPU), and a coin motor, enabling texture perception at three vibration granularities.
+Virtual reality (VR) provides immersive experiences through multisensory feedback, enhancing user interaction with digital environments. One key aspect of immersion is texture rendering, which is commonly achieved through visual and auditory cues. Incorporating haptic feedback for realistic texture perception is a mainstream of HCI research activities and it still remains a challenge. Most existing methods rely on hand-held devices, often limiting natural hand movements. This research explores the development and performance of a wearable device equipped with flex sensors, a Motion Processing Unit (MPU), and a coin motor, enabling texture perception at three vibration granularities.
 
-\section{Previous Methods}
-Deep-Texture [1] renders shape and texture in VR using a linear resonant actuator and a 1-bar mechanism, employing three frequencies for texture simulation. A follow-up study [2] examined how vibrotactile parameters (granularity, amplitude, timbre) affect texture perception by synchronizing vibrations with user movement, finding that granularity influences the perception of bumpiness or smoothness. Expanding on this, our research develops a data glove leveraging Pulse Width Modulation (PWM) to modulate granularity for texture rendering.
-\section{Proposed Method}
-Our proposed device is a sensor-equipped glove designed to enable finger tracking while delivering realistic haptic feedback. The glove integrates multiple key components to enhance interaction and immersion. Flex sensors are attached to each finger, allowing the system to detect bending and movement, accurately measuring the degree of flexion to interpret finger gestures in real time. An MPU, is embedded to track hand orientation, acceleration, and rotation, enabling motion capture and seamless interaction within virtual environments. Micro-vibration motors are placed within the glove to enhance tactile realism and provide haptic feedback, generating subtle vibrations that simulate textures during virtual interactions.
+\section{Related Work}
+Deep-Texture [1] renders shapes and textures of things in VR using a linear resonant actuator and a 1-bar mechanism, employing three frequencies for texture simulation. A follow-up study [2] examines how vibrotactile parameters (granularity, amplitude, timbre) affect texture perception by synchronizing vibrations with user movement, finding that granularity influences the perception of bumpiness or smoothness. This research develops a data glove leveraging Pulse Width Modulation (PWM) to modulate granularity for texture rendering and discusses the feasibility of PWM. PWM has the advantage of high tolerance for noise from frequent movement of wires that connect sensors and motors.
+
+\section{Haptic Feedback Data Glove}
+The proposed device is a sensor-equipped glove designed to enable finger tracking while delivering realistic haptic feedback. The glove integrates multiple key components to enhance interaction and immersion. Flex sensors are attached to each finger, allowing the system to detect bending and movement, accurately measuring the degree of flexion to interpret finger gestures in real time. An MPU is embedded to track hand orientation, acceleration, and rotation, and it enables motion capture and seamless interaction within virtual environments. Micro-vibration motors are placed within the glove to enhance tactile realism and provide haptic feedback, generating subtle vibrations that simulate textures during virtual interactions.
 
 \section{Experimental Setup}
-We involved six male participants in their 20s, who conducted two experiments to evaluate haptic feedback perception. The haptic feedback in this experiment were generated using PWM method at three different cycle rates: 20 cycles, 50 cycles, and 100 cycles, each representing a distinct texture sensation.\par
-In the first experiment, participants conducted a blind test to distinguish between three different haptic feedback. Before starting, they were introduced to all three granularities. A white 3D plane then appeared in the virtual environment, randomly generating one of the granularities upon contact with the virtual hand. Participants identified the perceived granularity, repeating the process 15 times to assess their ability to differentiate between them.\par
-The second experiment explored the relationship between haptic feedback granularities and texture perception. Participants interacted with a textured 3D plane (brick, grass, or marble), each generating three different haptic feedback granularities. After experiencing all three granularities for a given texture, they selected the one they felt best matched the material before proceeding to the next texture.\par
-After completing an evaluation questionnaire after the experiments. 					
+Six male participants with the ages of 24 to 27 took part in a series of experiment to evaluate haptic feedback perception. The haptic feedback were generated using PWM at three different cycle rates: 0.2, 0.5, and 1.0, each representing a distinct texture sensation.\par
+In the first experiment, participants conducted a blind test to distinguish between three different haptic feedback. Before starting, they were introduced to all three haptic feedback. A white 3D plane then appeared in the virtual environment, randomly generating one of the feedback upon contact with the virtual hand. The participants identified the perceived feedback, repeating the process 15 times to assess their ability to differentiate between them.\par
+The second experiment explored the relationship between haptic feedback and texture perception. The participants interacted with a textured 3D plane with  three different granularities of brick, grass, or marble, each generating three different haptic feedback. After experiencing all three feedback for a given texture, they were asked to select the one they felt best matched the material before proceeding to the next texture.\par
+They completed an evaluation questionnaire after the experiments. 					
 
 \section{Results}
-The results indicate that in the blind test involving three haptic feedback granularities, participants were able to distinguish between the lowest granularity (20 cycles) and the highest granularity (100 cycles), as shown in Fig. 1. However, the scores for the middle granularity (50 cycles) were similar to those of the lowest granularity. Some participants noted that 'the glove is too big for my hand, making it difficult to identify the granularities accurately.' This may be due to the use of a standard glove with an attached component, which cannot be adjusted to fit every hand.\par
-the result of second experiment as shown in fig.2. For Marble which represent the smoothest material is compatible with 100 cycle while the grass is likely to 50 duty cycle and for the last one that represent the least smoothness is 20 and 50 duty cycle is equal
+The results indicate that in the blind test involving three haptic feedback, the  participants were able to distinguish between the lowest cycle rate (0.2) and the highest one (1.0), as shown in Fig. 1. However, the scores for the middle one (0.5) were similar to those of the lowest one. Some participants noted that the glove is too big for my hand, making it difficult to identify the granularities accurately. This may be due to the use of a standard glove with an attached component, which cannot be adjusted to fit every hand.\par
+The result from the second experiment is shown in Fig.2. The marble which represents the smoothest material is compatible with 1.0 cycle rate while the grass is likely to go with 0.5 cycle rate and the last one that represents the least smoothness is equally for 0.2 and 0.5 cycle rate.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.35\textwidth]{./Fig/Blind_Test_graph.png}
+  \includegraphics[width=0.35\textwidth]{./Fig/PWM_Correct_Test.png}
   \caption{{Result of First Experiment}}
   \label{fig1}
   \vspace{0.1cm}
   \centering
-  \includegraphics[width=0.35\textwidth]{./Fig/Select_Cycle_graph.png}
+  \includegraphics[width=0.35\textwidth]{./Fig/Texture_Select_Test.png}
   \caption{{Result of Second Experiment}}
   \label{fig2}
 \end{figure}
 
 
 \section{Conclusion}
-The results show that participants could distinguish between the lowest (20 cycles) and highest (100 cycles) haptic granularities, but not the middle (50 cycles), possibly due to glove fit issues. Additionally, material smoothness influenced duty cycle compatibility, with marble aligning with 100 cycles, grass with 50 cycles, and the roughest material showing no clear preference between 20 cycles and 50 cycles. These findings highlight the role of both granularity and material in haptic feedback effectiveness.
+The results show that participants could distinguish between the lowest cycle rate (0.2 )and highest one (1.0) of haptic. Additionally, material smoothness influenced preferred cycle rate, with marble aligning with 1.0 cycle rate, grass with 0.5 cycle rate. These findings highlight the feasibility of PWM for haptic rendering of textures.
+
 \begin{thebibliography}{99}
   \scriptsize
     \bibitem{sdn1} Y. Sung, D. Kwak, T. Kim, W. Woo and S. H. Yoon, "Deep-Texture: A Lightweight Wearable Ring for Shape and Texture Rendering in Virtual Reality," 2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW), Orlando, FL, USA, 2024, pp. 911-912
