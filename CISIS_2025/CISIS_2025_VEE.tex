@@ -127,23 +127,36 @@ Our research addresses this gap by employing PWM for precise granularity simulat
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Intra/Inter Slice Handover
+% Haptic Data Glove
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Intra/Inter-Slice Handover}\label{sec:shd}
-The HO can be classified into two main types based on network and access technology: horizontal and vertical. The horizontal HO occurs within the same access technology, such as when a user moves between the BSs in a 5G network. This type of HO is commonly used in situations where the user remains within the same RAT, ensuring smooth transitions without changing the underlying technology. In contrast, the vertical HO involves transitioning between different RATs, such as when a mobile device switches from a cellular network to a Wireless Local Area Network (WLAN). Vertical HOs are critical for maintaining connectivity in heterogeneous networks, where multiple access technologies are available, and they enable devices to seamlessly shift between different network infrastructures while optimizing performance and resource usage~\cite{10147830, 8141874, PALMIERI2020107365}. 
+\section{Haptic Data Glove}\label{sec:shd}
+Our proposed wearable haptic device addresses current limitations in natural hand interaction, enhancing texture perception in virtual environments. The system comprises three primary modules: an ESP32 microcontroller, sensory components (flex sensors and IMU), and a coin vibration motor actuator. The detailed architecture of the system is illustrated in Figure~\ref{fig:system_diagram}.
 
-Inter-slice HO is an important process that transfers a device's connection from one NS to another within the same physical network infrastructure. This process is vital for maintaining QoS and Quality of Experience (QoE) when a device's service requirements change due to user activity or mobility patterns~\cite{ren2021fast, sajjad2022inter}. Efficient inter-slice HO is essential to meet the demands of high real-time services, such as 5G-assisted drones and autonomous driving. This capability is essential for maintaining optimal service because the requirements of user context or service evolve. Some examples of inter-slice HO are presented in following. 
-\begin{itemize}
-\item \textbf{Different vertical industries with different operators:}  Transitioning between slices dedicated to different industries (e.g., healthcare to automotive) managed by different network operators. This type of handover is complex due to the need for interoperability across operators' networks, each with its own set of policies, security standards, and service level agreements (SLAs).  
-\item \textbf{Different vertical industries with the same operators:} Handovers can occur between slices customized for different industries within a single network operator. This means that within a network, various slices, each optimized for specific industries or use cases, can seamlessly handover connections as users transition between different slices. For instance, moving a connection from a slice serving IoT devices in smart agriculture to another serving URLLC for autonomous vehicles.
-\item \textbf{Same vertical industries with different operators:} Handovers between slices serving the same industry but controlled by different operators, such as in cross-border scenarios for connected vehicles or international smartphone roaming. It needs to ensure continuous service in applications where users or devices move across different operators' coverage areas but needs consistent QoS and features.
-\end{itemize}
+\begin{figure}\centering
+	\includegraphics[width=1\textwidth]{figure/system diagram.png}%imagine Avation
+	\caption{System architecture of the wearable haptic glove, showing integration between Unity, ESP32, and hardware components.}\label{fig:system_diagram}
+\end{figure}
+\textbf{ESP32 Microcontroller:}  
+The ESP32 functions as the core processing unit, managing sensor data acquisition, real-time data processing, actuator control, and wireless communication. It employs Serial Communication to ensure continuous bidirectional data exchange with Unity, maintaining synchronization of haptic stimuli and sensor readings.
 
+\textbf{Flex Sensors (x5):}  
+Five resistive flex sensors, positioned along each finger of the glove, measure finger bending. These sensors deliver real-time analog signals corresponding to finger positions, enabling precise gesture recognition and accurate hand tracking.
 
+\textbf{Inertial Measurement Unit (MPU-6050):}  
+An MPU-6050 sensor captures spatial orientation, acceleration, and angular velocity data of hand movements. Integration of IMU measurements enhances spatial coherence between real and virtual hand positions, significantly improving immersive realism and spatial fidelity.
 
+\textbf{Coin Vibration Motor:}  
+A coin-type vibration motor generates controlled tactile feedback, utilizing Pulse Width Modulation (PWM) to replicate varying granularities in virtual textures. PWM modulation enables dynamic adjustment of vibration intensity and frequency, simulating realistic sensations from smooth to coarse surfaces. The device provides three distinct haptic feedback, systematically evaluating users' tactile perception sensitivity as recommended by prior research~\cite{strohmeier2017generating, bensmaia2005vibrations}.
 
+The integration of these components into the wearable device is shown in Figure~\ref{fig:glove_1}.
 
+\begin{figure}\centering
+	\includegraphics[width=0.5\textwidth]{figure/glove_1.png}%imagine Avation
+	\caption{Haptic Data Glove used for texture perception in virtual environments.}\label{fig:glove_1}
+\end{figure}
+
+This integrated approach facilitates intuitive interactions in virtual environments, enabling natural hand movements combined with realistic tactile sensations. The selected components directly address limitations noted in existing literature, achieving a lightweight, responsive design with nuanced texture rendering.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
