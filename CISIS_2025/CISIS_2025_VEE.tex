@@ -55,14 +55,15 @@
                        % please use the style svind.ist with
                        % your makeindex program
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-\title*{Lorem}
+\title*{Wearable Haptic Feedback Glove for Texture Rendering in Virtual Reality}
 
 % Use \titlerunning{Short Title} for an abbreviated version of
 % your contribution title if the original one is too long
-\titlerunning{Loren}
+\titlerunning{Glove for Texture Rendering in Virtual Reality}
 
 \author{Korntawat Witchuvanit, Makio Ishihara}
 
@@ -94,7 +95,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \abstract{
-Lorem TEst
+Virtual reality (VR) provides immersive experiences through multisensory feedback, enhancing user interaction with digital environments. One key immersion aspect is texture rendering, which is commonly achieved through visual and auditory cues. Incorporating haptic feedback for realistic texture perception is a mainstream of Human-Computer Interaction (HCI) research activities and it remains a challenge. Most existing methods rely on hand-held devices, often limiting natural hand movements. This research explores the development and performance of a wearable device equipped with flex sensors, a Motion Processing Unit (MPU), and a coin motor, enabling texture perception at three vibration granularities. The results show that participants can distinguish various textures based on their smoothness, particularly identifying differences between them.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,46 +103,26 @@ Lorem TEst
 % Introduction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{Introduction}
-In recent years, ~\cite{8985528, 9349624}.
+Virtual reality has evolved into a powerful tool for immersive experiences across diverse domains such as gaming, training, and therapy \cite{slater2016enhancing}. By integrating visual, auditory, and interactive components, VR environments offer users the sensation of presence, significantly enhancing engagement and realism \cite{biocca2013communication}. Advances in display technologies, motion tracking systems, and spatial audio have greatly improved immersion; however, realistic tactile perception remains a significant challenge, constraining overall sensory fidelity in VR applications.
 
-In 5G and B5G technologies, the Radio Access Technologies (RATs) are used to connect to network infrastructure. In the context of Heterogeneous Networks (HetNets), RATs are crucial for enabling the deployment of various types of Base Stations (BSs), each with distinct coverage areas and performance characteristics. This diversity allows networks to optimize performance by distributing traffic and improving coverage as shown in Fig.~\ref{fig:hetnets}. By integrating multiple RATs, HetNets can efficiently address the growing and diverse connectivity demands of users. The multi-RATs approach empowers network operators to utilize the full spectrum of wireless technologies, ensuring consistent, high-quality, and seamless connectivity even in complex environments~\cite{ullah2023survey}. This flexibility is vital for maintaining Quality of Service (QoS) as users move through different network areas, which have different service requirements.
+Haptic feedback is essential in bridging this sensory gap, as it introduces tactile stimuli that simulate real-world touch sensations \cite{culbertson2018haptics}. Various haptic devices, including vibrotactile actuators, force-feedback systems, and wearable gloves, have been developed to enhance tactile realism. Although handheld controllers are commonly used, they often restrict natural hand movements, negatively affecting immersion. Wearable solutions offer a promising alternative by enabling direct and intuitive hand interactions with virtual objects \cite{pacchierotti2017wearable}. Nonetheless, designing lightweight, responsive, and versatile wearable haptic systems remains an open challenge within HCI research.
 
-%Mobility management is a crucial function in 5G/B5G networks, as it enables seamless access to wireless networks and mobile services, ensuring uninterrupted connectivity for users as they move. 
-In 5G/B5G networks, mobility management serves a critical role in providing seamless utilization of wireless networks and mobile services, guaranteeing users' ongoing connectivity when they are changing positions. One of the key components of mobility management is the Hand-Over (HO) process, also referred to as handoff, which allows a mobile device to maintain continuous service while transitioning from one cell or slice area to another. This essential feature in mobile cellular networks ensures that ongoing calls or data sessions are not interrupted as the user moves across the coverage areas of different cell towers.
-
-The HO process is complex because the seamless transition should be managed for  various types of cells, such as macro, micro, pico, and femtocells. Also the interference in both co-channel and adjacent-channels can significantly degrade service quality. These interference issues, coupled with the diverse characteristics of different cell types, introduce new obstacles for HO optimization. As a result, the development of innovative techniques and solutions is required to enhance HO processes, ensuring seamless connectivity and improved network performance in such dynamic environments.
-
-\begin{figure}[h]\centering
-	\includegraphics[width=0.8\textwidth]{figure/hetnets.png}
-	\caption{HetNets.}\label{fig:hetnets}
-\end{figure}
-
-Researchers have proposed various approaches to address HO and mobility management in 5G/B5G HetNet. One of such approach is Software-Defined Networks (SDN)~\cite{7108393}. Also Fuzzy Logic (FL) is introduced to enhance QoS in HO procedure by considering Reference Signal Received Power (RSRP), Reference Signal Received Quality (RSRQ), and UE velocity as input parameters~\cite{alraih2022robust}. In \cite{khan2021improved}, an algorithm for HO decision is introduced, which utilizes Machine Learning techniques to keep track of active time, available radio resources, UE speed, and received power of the reference signal. The algorithm is implemented in a simulation model that considers small and macro cells with carrier frequency (2 to 2.8 GHz), radius, and shared bandwidth. Furthermore, employing mobile HO techniques in SDN frameworks can minimize HO processing delays, thereby enhancing the efficiency and performance of 5G networks~\cite{8587956,7993880,8748678}. For the security and reliability of inter-slicing HO, in~\cite{10060402}, the authors focus on identifying and mitigating security flaws within 5G network slicing by employing attack detection and localization algorithms. 
-
-5G/B5G wireless networks introduce new challenges for HO optimization, necessitating new solutions. Therefore, this paper presents a Fuzzy-based HO system for 5G/B5G wireless networks, which considers four parameters: Slice Load (SL), Slice Stability (SS), Slice Delay (SD), and Slice Monetary Cost (SMC) as a new parameter.
- 
-The outline of the paper is organized as follows. First, we provide an overview of 5G/B5G NS. Then, Section~\ref{sec:shd} presents the concept of Inter-Slice HO. In Section~\ref{sec:nssdn}, we discuss NS and SDN. Section~\ref{sec:proposed} presents the proposed Fuzzy-based system and its implementation. The simulation results are analyzed in Section~\ref{sec:sim-results}. Finally, conclusions and directions for future research are discussed in Section~\ref{sec:conclusions}.
-
+To address these limitations, we propose a custom wearable glove equipped with flex sensors, MPU, and a coin motor for providing nuanced haptic feedback. Our glove enhances virtual texture perception by modulating vibration frequencies across three distinct granularities, selected based on their demonstrated influence on perceived texture realism \cite{strohmeier2017generating,bensmaia2005vibrations}. This paper's contributions include the development of a lightweight and responsive wearable device and the empirical evaluation of users' tactile perception of texture granularity, thereby advancing the realism and immersion of VR haptic feedback systems.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 5G Network Slicing
+% Related Work
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{5G/B5G Network Slicing}\label{sec:nssdn}
-The NS is a technology that divides a single virtualized infrastructure into multiple independent virtual end-to-end networks, known as "slices". The NS configures these slices with virtualized functions specifically tailored to meet the demands of different applications, enabling the network to efficiently handle varying user requests. Each slice operates independently, ensuring that its performance does not interfere with the other slices~\cite{Namwon2019,jiang2016network,8858288}. 
+\section{Related Work}\label{sec:nssdn}
+Recent advancements in haptic feedback systems have emphasized simulating realistic texture granularity using techniques like Pulse Width Modulation (PWM) and advanced tactile technologies. Bach et al. \cite{bach2023enhanced} notably enhanced tactile experiences using Pb(Zr,Ti)O₃ thin films on German silver foils, contributing to more precise texture sensations in microsystem technologies. Otake et al. \cite{otake2022vibrotactile} explored combining vibrotactile and electrostatic-friction stimuli, significantly improving texture realism for touch-panel applications.
 
-In Fig. \ref{fig:NS} is illustrated a NS framework consisting of three distinct slices, each designed for specific use cases. The first slice is optimized for smartphones, ensuring high-quality service for voice calls and data consumption. The second slice supports automotive applications, such as connected and autonomous vehicles, offering high-speed and low-latency communication. The third slice is dedicated to IoT devices, focusing on low power consumption while managing a large number of simultaneous connections efficiently. This flexibility allows the network to meet diverse requirements.
+Machine learning approaches also gained prominence for generating realistic tactile feedback. Zhang et al. \cite{zhang2022texsensegan} developed TexSenseGAN, leveraging Generative Adversarial Networks (GANs) to optimize vibrotactile feedback based on user input, enhancing texture realism intuitively. Moreover, Strohmeier and Hornbæk \cite{strohmeier2017generating} examined how parameters like granularity, amplitude, and timbre affect perceived haptic textures, identifying granularity as particularly influential for users' perception of bumpiness and smoothness.
 
-\begin{figure}[H]\centering
-	\includegraphics[width=0.6\textwidth]{figure/slices.png}
-	\caption{NS framework.}\label{fig:NS}
-\end{figure}
+PWM technology, frequently integrated into these systems, provides dynamic adjustments of vibration intensity and frequency, enabling precise simulations of texture granularity. This capability facilitates generating tactile sensations ranging from smooth surfaces to coarse textures. However, despite significant progress, existing systems often fail to offer fully intuitive and unrestricted hand interactions due to physical constraints or limited responsiveness.
 
-In NS environment, NS services are customized to meet the specific requirements of different applications, and authentication is required after a slice is selected. The application server is responsible for verifying whether the device has the necessary authorization to access the chosen slice. Devices may need to switch between slices for various reasons, such as when multiple slices offer the same service but differ in terms of quality, performance or cost. This flexibility allows devices to choose slices based on their preferences or specific needs, ensuring optimal service delivery~\cite{9843870, 9911525}.
-
+Our research addresses this gap by employing PWM for precise granularity simulation in wearable haptic devices, focusing explicitly on texture perception within virtual environments. By providing dynamic, responsive, and intuitive tactile feedback, our approach enhances user immersion and interaction realism in VR applications.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
