@@ -1,1 +1,1 @@
-inkscape -D question_result.svg  -o question_result.pdf --export-latex
+inkscape -D ex2_result.svg  -o ex2_result.pdf --export-latex
