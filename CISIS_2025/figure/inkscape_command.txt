@@ -1,0 +1,1 @@
+inkscape -D image.svg  -o image.pdf --export-latex

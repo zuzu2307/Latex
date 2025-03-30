@@ -42,7 +42,9 @@
 %\usepackage[numbers,sort&compress]{natbib}
 %\bibliographystyle{unsrtnat}
 %\usepackage[numbers,sort&compress]{natbib}
-
+\usepackage[inkscapelatex=false]{svg}
+\svgpath{{./figure/}} %path to your svg files
+\usepackage{amsmath}
 \usepackage{newtxtext,newtxmath} %これで英文字も綺麗なベクターになる(timesより優秀)
 \def\vector#1{\mbox{\boldmath $#1$}}
 
@@ -174,7 +176,8 @@ Figure~\ref{fig:experiment_setup} shows the general experimental setup, highligh
 \end{figure}
 
 \subsection{Experiment 1: Distinguishing Haptic Feedback}
-Participants performed a blind test to evaluate their ability to distinguish between three distinct vibration cycle rates: 0.2, 0.5, and 1.0. Before starting, participants were familiarized with each cycle rate to establish clear tactile references.
+We recruited six participants aged 24–27 to performed a blind test to evaluate their ability to distinguish between three distinct vibration cycle rates: 0.2, 0.5, and 1.0. Before starting, participants were familiarized with each cycle rate to establish clear tactile references.
+performed a blind test to evaluate their ability to distinguish between three distinct vibration cycle rates: 0.2, 0.5, and 1.0. Before starting, participants were familiarized with each cycle rate to establish clear tactile references.
 
 \textbf{Procedure:} Participants wore and calibrated the glove through repeated hand opening and closing gestures, ensuring accurate hand tracking. Subsequently, participants interacted with a plain white 3D plane in the virtual environment (Figure~\ref{fig:experiment1_setup}), triggering randomly generated vibrations corresponding to one of the three cycle rates. Participants verbally identified the perceived cycle rate after each interaction. Each participant completed 15 randomized trials, assessing their discrimination accuracy.
 
@@ -184,7 +187,7 @@ Participants performed a blind test to evaluate their ability to distinguish bet
 \end{figure}
 
 \subsection{Experiment 2: Relationship Between Haptic Feedback and Texture Perception}
-Experiment~2 explored how different vibration cycle rates influenced the perceived realism of virtual textures. Participants interacted with three visually distinct textures (brick, grass, marble), each paired sequentially with vibration cycle rates of 0.2, 0.5, and 1.0.
+The participants from Experiment 1 were also involved in Experiment 2. This experiment explored how different vibration cycle rates influenced the perceived realism of virtual textures. Participants interacted with three visually distinct textures—brick, grass, and marble—each sequentially paired with vibration cycle rates of 0.2, 0.5, and 1.0.
 
 \textbf{Procedure:} Following glove calibration, participants interacted sequentially with each virtual texture (Figure~\ref{fig:experiment2_setup}), experiencing all three vibration cycle rates (0.2, 0.5, and 1.0). After experiencing each set of cycle rates for a given texture, participants selected the cycle rate they felt most accurately matched the visual texture. This procedure was repeated for each texture type, presented in random order per participant.
 
@@ -238,12 +241,20 @@ Participant responses provided qualitative insights into embodiment, tactile rea
 Participants' accuracy in identifying the three PWM cycle rates (0.2, 0.5, and 1.0) is summarized in Figure~\ref{fig:ex1_results}. The highest accuracy (26/30) was achieved at the 1.0 cycle rate, suggesting participants found stronger, clearly defined vibrations easiest to recognize. Accuracy decreased slightly at lower cycle rates (0.5: 24/30; 0.2: 23/30), indicating that subtler vibrations were comparatively challenging. This aligns with prior research indicating that higher vibration intensities yield clearer tactile distinctions~\cite{strohmeier2017generating,bensmaia2005vibrations}. These findings confirm the effectiveness of PWM cycle rates for distinguishing different tactile sensations.
 \\
 \\
+% \begin{figure}
+%     \centering
+%     \def\svgwidth{\columnwidth}
+%     \input{figure/ex1_result.pdf_tex}%imagine Avation
+% 	\caption{Participants' accuracy in identifying different vibration cycle rates.}\label{fig:ex1_results}
+% \end{figure}
 \begin{figure}\centering
 	\includegraphics[width=0.8\textwidth]{figure/ex1_result.png}%imagine Avation
+	% \includesvg[width=0.6\columnwidth](ex1_result.svg)%imagine Avation
 	\caption{Participants' accuracy in identifying different vibration cycle rates.}\label{fig:ex1_results}
 \end{figure}
 
-\textbf{Experiment 2: Relationship Between Haptic Feedback and Texture Perception.}  
+\textbf{Experiment 2: Relationship Between Haptic Feedback and Texture Perception.}
+
 Participants' preferences for associating specific vibration cycle rates with virtual textures (brick, grass, marble) are illustrated in Figure~\ref{fig:ex2_results}. The marble texture was unanimously associated with the highest cycle rate (1.0), suggesting participants perceived smoother and more rigid textures as best represented by higher-intensity vibrations. Conversely, the brick and grass textures elicited preferences for lower and intermediate cycle rates (0.2 and 0.5), reflecting participants' association of moderate vibrations with intermediate texture roughness. These results clearly highlight the link between vibration granularity and perceived realism, reinforcing the importance of tailored tactile feedback for different textures~\cite{otake2022vibrotactile}.
 
 \begin{figure}\centering
@@ -252,7 +263,8 @@ Participants' preferences for associating specific vibration cycle rates with vi
 \end{figure}
 
 
-\textbf{Post-Experiment Evaluation.}  
+\textbf{Post-Experiment Evaluation.} 
+
 Subjective feedback (Figure~\ref{fig:questionnaire_results}) revealed high ratings in perceived texture realism (Q10; 32 points), tactile alignment (Q7; 30 points, Q6; 29 points), and overall immersion (Q12; 29 points). Moderate agreement was found in tactile sensations attributed directly to the virtual hand (Q2; 29 points) and control fidelity (Q4; 25 points). Lower scores in embodiment and naturalness of hand interactions (Q5; 19 points, Q8; 19 points) suggest areas needing further refinement. These results reinforce the success of the glove in enhancing tactile feedback realism and immersion, echoing findings from previous wearable haptic studies~\cite{pacchierotti2017wearable}. However, the lower embodiment scores indicate potential improvements in sensor placement or glove calibration procedures to strengthen the perceived naturalness of virtual hand interactions.
 
 \begin{figure}\centering
@@ -261,6 +273,7 @@ Subjective feedback (Figure~\ref{fig:questionnaire_results}) revealed high ratin
 \end{figure}
 
 \textbf{General Discussion.}  
+
 Collectively, the experimental and subjective results demonstrate that PWM-based tactile feedback significantly improves users' ability to distinguish and realistically perceive virtual textures, contributing positively to overall immersion in virtual environments. The findings support previous literature emphasizing the importance of tactile granularity and frequency modulation for realistic texture rendering~\cite{strohmeier2017generating,bach2023enhanced}. Future iterations of the haptic glove should prioritize enhancing the sense of embodiment by refining hand tracking fidelity and further optimizing vibration characteristics for various textures.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
