@@ -2205,7 +2205,7 @@ to\z@{\kern0.55\wd0\vrule\@height0.45\ht0\hss}\box0}}}}
           \typeout{a shorter form with \string\titlerunning\space prior to
                    \string\maketitle}%
           \global\setbox\titrun=\hbox{\small\rm
-          An Intelligent Approach for Resource Management in SDN-VANETs Using Fuzzy Logic}%
+          The Development of Haptic Feedback Data Glove for Enhancing Immersion in VR Experiences}%
        \fi
        \xdef\@title{\copy\titrun}%
     \fi
