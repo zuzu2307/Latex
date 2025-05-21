@@ -63,13 +63,13 @@
 % your contribution title if the original one is too long
 \titlerunning{The Development of Haptic Feedback Data Glove for Enhancing Immersion}
 \author{\hfill Korntawat Witchuvanit}
-\authorrunning{Korntawat Witchuvanit} 
+\authorrunning{Korntawat Witchuvanit}
 % your contribution title if the original one is too long
 \institute{
-     Korntawat Witchuvanit
-     \at Graduate School of Engineering, Fukuoka Institute of Technology (FIT), 3-30-1 Wajiro-Higashi, Higashi-Ku, Fukuoka 811--0295, Japan,
-     \email{korntawat.contact@gmail.com}
-     }
+	Korntawat Witchuvanit
+	\at Graduate School of Engineering, Fukuoka Institute of Technology (FIT), 3-30-1 Wajiro-Higashi, Higashi-Ku, Fukuoka 811--0295, Japan,
+	\email{korntawat.contact@gmail.com}
+}
 
 
 \maketitle
@@ -79,11 +79,11 @@
 \section{Introduction}
 \label{sec:1}
 
-	My Master's studies at FIT are related to the development of a compact and wearable haptic interface for Virtual Reality (VR). Traditional VR controllers can be bulky and restrict natural hand movements, limiting user immersion and tactile perception~\cite{Slater2009, Choi2016}. To address this challenge, we developed a lightweight haptic glove that allows for intuitive hand interaction while delivering tactile feedback through embedded actuators.
-	
-	The glove integrates flex sensors for finger movement detection, an MPU sensor for tracking hand orientation, and coin-type vibration motors to provide vibrotactile feedback. By applying Pulse Width Modulation (PWM) to control the vibration motors, the system simulates different levels of surface smoothness. In user experiments, participants were able to distinguish between textures rendered at varying PWM cycle rates, indicating that PWM-based feedback can effectively simulate the granularity of virtual textures.
-	
-	In my Master Thesis, I implemented and evaluated the haptic feedback glove system, confirming its feasibility for realistic texture rendering in VR.
+My Master's studies at FIT are related to the development of a compact and wearable haptic interface for Virtual Reality (VR). Traditional VR controllers can be bulky and restrict natural hand movements, limiting user immersion and tactile perception~\cite{Slater2009, Choi2016}. To address this challenge, we developed a lightweight haptic glove that allows for intuitive hand interaction while delivering tactile feedback through embedded actuators.
+
+The glove integrates flex sensors for finger movement detection, an MPU sensor for tracking hand orientation, and coin-type vibration motors to provide vibrotactile feedback. By applying Pulse Width Modulation (PWM) to control the vibration motors, the system simulates different levels of surface smoothness. In user experiments, participants were able to distinguish between textures rendered at varying PWM cycle rates, indicating that PWM-based feedback can effectively simulate the granularity of virtual textures.
+
+In my Master Thesis, I implemented and evaluated the haptic feedback glove system, confirming its feasibility for realistic texture rendering in VR.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -104,16 +104,16 @@ The proposed wearable haptic device addresses current limitations in natural han
 	\includegraphics[width=1\textwidth]{figure/system diagram.png}%imagine Avation
 	\caption{System architecture of the wearable haptic glove, showing integration between Unity, ESP32, and hardware components.}\label{fig:system_diagram}
 \end{figure}
-\textbf{ESP32 Microcontroller:}  
+\textbf{ESP32 Microcontroller:}
 The ESP32 functions as the core processing unit, managing sensor data acquisition, real-time data processing, actuator control, and wireless communication. It employs Serial Communication to ensure continuous bidirectional data exchange with Unity, maintaining synchronization of haptic stimuli and sensor readings.
 
-\textbf{Flex Sensors (x5):}  
+\textbf{Flex Sensors (x5):}
 Five resistive flex sensors, positioned along each finger of the glove, measure finger bending. These sensors deliver real-time analog signals corresponding to finger positions, enabling precise gesture recognition and accurate hand tracking.
 
-\textbf{Inertial Measurement Unit (MPU-6050):}  
+\textbf{Inertial Measurement Unit (MPU-6050):}
 An MPU-6050 sensor captures spatial orientation, acceleration, and angular velocity data of hand movements. Integration of IMU measurements enhances spatial coherence between real and virtual hand positions, significantly improving immersive realism and spatial fidelity.
 
-\textbf{Coin Vibration Motor:}  
+\textbf{Coin Vibration Motor:}
 A coin-type vibration motor generates controlled tactile feedback, utilizing PWM to replicate varying granularities in virtual textures. PWM modulation enables dynamic adjustment of vibration intensity and frequency, simulating realistic sensations from smooth to coarse surfaces. The device provides three distinct haptic feedback, systematically evaluating users' tactile perception sensitivity as recommended by prior research~\cite{strohmeier2017generating, bensmaia2003vibrations}.
 
 The integration of these components into the wearable device is shown in Figure~\ref{fig:glove_1}.
@@ -165,34 +165,34 @@ Collectively, these experiments provided insights into participants' perceptual 
 After completing both experiments, participants provided subjective feedback through a questionnaire consisting of 12 statements (Table~\ref{tab:evaluation_questions}). Each statement was rated on a Likert scale from 1 (strongly disagree) to 7 (strongly agree), covering virtual hand embodiment, tactile realism, and immersion. Questions about the sense of virtual hand ownership and control (e.g., Q1, Q3, Q4, Q8) were based on the Virtual Embodiment Questionnaire (VEQ)~\cite{roth2017alpha}. Statements assessing how realistic and aligned the tactile sensations felt (Q2, Q6, Q7, Q10) were guided by the Haptic Experience (HX) model~\cite{schneider2017haptic}. Additionally, overall immersion (Q12) was evaluated according to concepts from the Presence Questionnaire (PQ)~\cite{witmer1998measuring}.
 
 \begin{table}[htbp]
-    \centering
-    \caption{Post-experiment evaluation questionnaire.}
-    \label{tab:evaluation_questions}
-    \resizebox{\textwidth}{!}{
-    \begin{tabular}{c | c}
-        \hline
-        \textbf{Question} & \textbf{Statement}\\
-        \hline
-        Q1 & I felt as if the virtual hands were my own.\\\hline
-        Q2 & I felt that the tactile sensations were caused by the virtual hand.\\\hline
-        Q3 & I felt as if my hand were the virtual hand.\\\hline
-        Q4 & I felt like I was controlling the movement of the virtual hand.\\\hline
-        Q5 & I felt as if the virtual hand was naturally connected to my body.\\\hline
-        Q6 & The tactile sensations I perceived felt naturally aligned with the virtual hand.\\\hline
-        Q7 & When I touched the virtual plane, I felt as if my real hand was also being touched.\\\hline
-        Q8 & The movements of the virtual hand felt natural to me.\\\hline
-        Q9 & I felt that the virtual hand responded as expected to my movements.\\\hline
-        Q10 & I had the sensation that I could feel the texture of objects through the virtual hand.\\\hline
-        Q11 & I felt a mismatch between my real hand and the virtual hand.\\\hline
-        Q12 & The overall experience made me feel immersed in the virtual environment.\\
-        \hline
-    \end{tabular}}
+	\centering
+	\caption{Post-experiment evaluation questionnaire.}
+	\label{tab:evaluation_questions}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{c | c}
+			\hline
+			\textbf{Question} & \textbf{Statement}                                                                     \\
+			\hline
+			Q1                & I felt as if the virtual hands were my own.                                            \\\hline
+			Q2                & I felt that the tactile sensations were caused by the virtual hand.                    \\\hline
+			Q3                & I felt as if my hand were the virtual hand.                                            \\\hline
+			Q4                & I felt like I was controlling the movement of the virtual hand.                        \\\hline
+			Q5                & I felt as if the virtual hand was naturally connected to my body.                      \\\hline
+			Q6                & The tactile sensations I perceived felt naturally aligned with the virtual hand.       \\\hline
+			Q7                & When I touched the virtual plane, I felt as if my real hand was also being touched.    \\\hline
+			Q8                & The movements of the virtual hand felt natural to me.                                  \\\hline
+			Q9                & I felt that the virtual hand responded as expected to my movements.                    \\\hline
+			Q10               & I had the sensation that I could feel the texture of objects through the virtual hand. \\\hline
+			Q11               & I felt a mismatch between my real hand and the virtual hand.                           \\\hline
+			Q12               & The overall experience made me feel immersed in the virtual environment.               \\
+			\hline
+		\end{tabular}}
 \end{table}
 
 Participant responses provided qualitative insights into embodiment, tactile realism, and immersion, complementing the quantitative outcomes from Experiments~1 and 2.
 
 \subsubsection{Results}
-\textbf{Experiment 1: Distinguishing Haptic Feedback: }  
+\textbf{Experiment 1: Distinguishing Haptic Feedback: }
 Participants' accuracy in identifying the three PWM cycle rates (0.2, 0.5, and 1.0) is summarized in Figure~\ref{fig:ex1_results}. The highest accuracy (26/30) was achieved at the 1.0 cycle rate, suggesting that participants found higher-intensity vibrations easier to identify. Accuracy slightly decreased at lower cycle rates (0.5: 24/30; 0.2: 23/30), indicating that subtler vibrations were more challenging to distinguish. This aligns with prior research indicating that higher vibration intensities yield clearer tactile distinctions~\cite{strohmeier2017generating,bensmaia2003vibrations}. These findings confirm the effectiveness of PWM cycle rates in distinguishing tactile sensations.
 \begin{figure}\centering
 	\includesvg[width=0.7\textwidth, inkscapelatex=true]{figure/ex1_result}
@@ -221,47 +221,50 @@ Subjective feedback (Figure~\ref{fig:questionnaire_results}) revealed high ratin
 
 My PhD research will focus on enhancing the realism of tactile feedback in Virtual Reality (VR) using perception-based techniques with a small number of actuators. The glove system developed during my Master’s studies used PWM to simulate different textures. While this approach was effective for basic texture rendering, it is difficult to produce fine detail due to the limited number of vibration motors. To address this, we aim to develop a system that uses perceptual illusions and optimized feedback patterns to create the feeling of high-resolution textures without adding hardware complexity.
 
-Human perception can be used to enhance haptic feedback in efficient ways. For example, by activating motors in certain time sequences, it is possible to create the illusion of motion or a continuous surface, even when using only a few actuators. This concept is known as perception-based tactile rendering, where the feedback is designed not only based on the physical signal but also how it is interpreted by the user~\cite{Ujitoko2022,Dandu2021}.
+Human perception can be used to enhance haptic feedback in efficient ways. For example, by activating motors in certain time sequences, it is possible to create the illusion of motion or a continuous surface, even when using only a few actuators. This concept is known as perception-based tactile rendering, where the feedback is designed not only based on the physical signal but also on how it is interpreted by the user~\cite{Ujitoko2022,Dandu2021}.
 
-The system will use a rule-based or data-driven control method to select the most suitable vibration pattern for each texture. This includes adjusting parameters such as frequency, intensity, duration, and timing of each motor activation. By applying findings from perception studies, we aim to achieve high tactile realism while keeping the system lightweight and energy-efficient~\cite{Kyung2021,Israr2016}.
+The system will use a rule-based or data-driven control method to select the most suitable vibration pattern for each texture. This includes adjusting parameters such as frequency, intensity, duration, and timing of each motor activation. By applying findings from perception studies, we aim to achieve high tactile realism while keeping the system lightweight and energy-efficient.
 
+To evaluate the proposed system, we will conduct user studies comparing perception-based feedback to standard vibration patterns. Participants will interact with virtual textures and rate their realism, immersion, and tactile clarity. The results will help verify whether users can recognize texture differences and feel more immersed, even with a small number of actuators.
+
+%%%%%%%%%%%%%%%%%%%% PhD Research %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Future Work and Annual Research Plan}
 \label{sec:conc}
 My PhD research plan includes the following topics:
 \begin{itemize}
-	\item Proposal of new parameters for IFACS.
-	\item Experiments with IFACS. 
-	\item Comparison of simulation results with other systems and research works.
-	\item Comparison of simulation results with experimented results.
+	\item Design and implementation of patterned vibration feedback for texture simulation.
+	\item Development of perception-based control logic for feedback generation.
+	\item Experiments on texture discrimination and immersion with sparse actuators.
+	\item Comparison of user study results with traditional vibration feedback systems.
 \end{itemize}
 
 The detailed plan for each year is as follows.
 \begin{enumerate}
-	\item In the first year, I will deal with following issues.
-	\begin{itemize}
-		\item Proposal of new parameters for IFACS
-		\item Proposal of new parameters for QoS Evaluation.
-		\item Implementation of proposed systems. 
-		\item Evaluation of proposed systems.
-	\end{itemize}
-	\item In the second year, I will deal with following issues.
-	\begin{itemize}
-		\item Experiments with IFACS. 
-		\item Comparison between simulation results and experiment result.
-		\item Comparison with other research works.
-	\end{itemize}
+	\item In the first year, I will deal with the following issues.
+	      \begin{itemize}
+		      \item Literature review on tactile illusions and perception-guided haptics.
+		      \item Design and initial implementation of patterned vibration feedback.
+		      \item Development of a rule-based control model for pattern selection.
+		      \item Pilot testing to evaluate basic perception and texture discrimination.
+	      \end{itemize}
+	\item In the second year, I will deal with the following issues.
+	      \begin{itemize}
+		      \item Design of additional feedback patterns for complex and dynamic textures.
+		      \item User studies to evaluate tactile realism and immersion.
+		      \item Comparison of results with fixed-pattern or commercial feedback systems.
+		      \item Refinement of feedback models and pattern design based on experimental results.
+	      \end{itemize}
 	\item In the last year, I will deal with the following issues.
-	\begin{itemize}
-		\item Implementation of integrated call admission control and handover for 5G wireless networks.
-		\item Writing of PhD Thesis.
-	\end{itemize}
+	      \begin{itemize}
+		      \item Application of the system in practical VR use cases (e.g., training, virtual exploration).
+		      \item Final usability testing and system optimization.
+		      \item Writing of PhD Thesis.
+	      \end{itemize}
 \end{enumerate}
 
 
 \section{Conclusions}
-In this report, I presented my research during Master studies. Then, I introduced 5G Wireless Networks, SDN, FL, GAs and PSO as related technologies and approaches for my PhD studies.
-
-
+In this report, I presented my research during my Master studies. Then, I introduced tactile feedback in Virtual Reality, wearable haptic devices, and perception-based rendering techniques as related technologies and approaches for my PhD studies. 
 \bibliographystyle{ieeetr}
 \bibliography{ref}
 
