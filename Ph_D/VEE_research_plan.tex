@@ -63,7 +63,7 @@
 
 
 \maketitle
-\vspace{-100pt} 
+\vspace{-120pt} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% Present Research
@@ -74,16 +74,14 @@
 %%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Background and Motivation}\label{sec:BG}
-Virtual reality (VR) has emerged as a powerful medium for creating immersive experiences in various fields, including gaming, training, and therapy. By integrating visual, auditory, and interactive elements, VR enhances user presence and realism. Although there have been significant advancements in display technology, motion tracking, and spatial audio that improve immersion, realistic tactile perception remains a critical limitation affecting overall sensory fidelity.
-
-Haptic feedback is crucial in bridging this gap, as it simulates real-world touch sensations through devices such as vibrotactile actuators, force-feedback systems, and wearable gloves. While handheld controllers are widely used, they often restrict natural hand movement and reduce immersion. In contrast, wearable haptic solutions offer a more intuitive alternative, enabling direct interaction with virtual objects. However, achieving a balance between responsiveness, comfort, and realism continues to be a challenge in human-computer interaction (HCI) research.
-
-To address this issue, I developed a custom haptic glove that integrates flex sensors, an MPU, and a coin motor, designed to modulate vibration frequencies across three levels of granularity, thus enhancing texture perception. This work contributes to the advancement of tactile realism in VR by presenting a lightweight, responsive glove and empirically evaluating users' ability to perceive texture differences through vibration-based feedback.
-
+\vspace{-10pt} 
+Virtual reality (VR) provides immersive experiences through multisensory feedback, enhancing user interaction with digital environments. One key aspect of immersion is texture rendering, which is commonly achieved through visual and auditory cues. Incorporating haptic feedback for realistic texture perception is a mainstream of HCI research activities and it still remains a challenge. Most existing methods rely on hand-held devices, often limiting natural hand movements. This research explores the development and performance of a wearable device equipped with flex sensors, a Motion Processing Unit (MPU), and a coin motor, enabling texture perception at three vibration granularities.
 
 %%%%%%%%%%%%%%%%%%%% System Overview %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{-15pt} 
 \subsection{System Overview}
 \label{sec:System Overview}
+\vspace{-10pt} 
 In my Master's thesis, I proposed a wearable haptic device that addresses current limitations in natural hand interaction, enhancing texture perception in virtual environments. The system comprises three primary modules: an ESP32 microcontroller, sensory components (flex sensors and IMU), and a coin vibration motor actuator. The detailed architecture of the system is illustrated in Figure~\ref{fig:system_diagram}.
 
 \begin{figure}\centering
@@ -100,11 +98,10 @@ Five resistive flex sensors, positioned along each finger of the glove, measure 
 An MPU-6050 sensor captures spatial orientation, acceleration, and angular velocity data of hand movements. Integration of IMU measurements enhances spatial coherence between real and virtual hand positions, significantly improving immersive realism and spatial fidelity.
 
 \textbf{Coin Vibration Motor:}
-A coin-type vibration motor generates controlled tactile feedback, utilizing PWM to replicate varying granularities in virtual textures. PWM modulation enables dynamic adjustment of vibration intensity and frequency, simulating realistic sensations from smooth to coarse surfaces. The device provides three distinct haptic feedback, systematically evaluating users' tactile perception sensitivity as recommended by prior research.
+A coin-type vibration motor generates controlled tactile feedback, utilizing PWM to replicate varying granularities in virtual textures. PWM modulation enables dynamic adjustment of vibration intensity and frequency, simulating realistic sensations from smooth to coarse surfaces. The device provides three distinct haptic feedback, systematically evaluating users' tactile perception sensitivity as recommended by prior research. The integration of these components into the wearable device is shown in Figure~\ref{fig:glove_1}.
 
-The integration of these components into the wearable device is shown in Figure~\ref{fig:glove_1}.
-
-\begin{figure}\centering
+\begin{figure}
+	\centering
 	\includegraphics[width=0.5\textwidth]{figure/glove_1.png}%imagine Avation
 	\caption{Haptic Data Glove used for texture perception in virtual environments.}\label{fig:glove_1}
 \end{figure}
@@ -112,7 +109,9 @@ The integration of these components into the wearable device is shown in Figure~
 This integrated approach facilitates intuitive interactions in virtual environments, enabling natural hand movements combined with realistic tactile sensations. The selected components directly address limitations noted in existing literature, achieving a lightweight, responsive design with nuanced texture rendering.
 
 %%%%%%%%%%%%%%%%%%%% Experiments %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{-15pt} 
 \subsection{Experiments}\label{sec:Experiments}
+\vspace{-10pt} 
 I conducted two experiments to evaluate the effectiveness of the developed wearable haptic glove. Experiment~1 assessed participants' ability to differentiate among three distinct haptic feedback cycle rates, while Experiment~2 explored the relationship between these cycle rates and the perceived realism of different virtual textures.
 
 Figure~\ref{fig:experiment_setup} shows the general experimental setup, highlighting participant interaction with the haptic glove in the virtual environment.
@@ -122,7 +121,9 @@ Figure~\ref{fig:experiment_setup} shows the general experimental setup, highligh
 	\caption{Overall experimental setup demonstrating participant interaction using the wearable haptic glove.}\label{fig:experiment_setup}
 \end{figure}
 
+\vspace{-25pt} 
 \subsubsection{Experiment 1: Distinguishing Haptic Feedback}
+\vspace{-5pt} 
 I recruited six participants aged 24–27 to performed a blind test to evaluate their ability to distinguish between three distinct vibration cycle rates: 0.2, 0.5, and 1.0. Before starting, participants were familiarized with each cycle rate to establish clear tactile references.
 performed a blind test to evaluate their ability to distinguish between three distinct vibration cycle rates: 0.2, 0.5, and 1.0. Before starting, participants were familiarized with each cycle rate to establish clear tactile references.
 
@@ -135,6 +136,7 @@ performed a blind test to evaluate their ability to distinguish between three di
 \end{figure}
 
 \subsubsection{Experiment 2: Relationship Between Haptic Feedback and Texture Perception}
+\vspace{-5pt} 
 The participants from Experiment 1 were also involved in Experiment 2. This experiment explored how different vibration cycle rates influenced the perceived realism of virtual textures. Participants interacted with three visually distinct textures—brick, grass, and marble—each sequentially paired with vibration cycle rates of 0.2, 0.5, and 1.0.
 
 \textbf{Procedure:} After the first experiment, participants took a 5-minute break before proceeding to the second experiment. In this phase, participants sequentially interacted with each virtual texture (Figure~\ref{fig:experiment2_setup}), experiencing all three vibration cycle rates (0.2, 0.5, and 1.0). After experiencing each set of cycle rates for a given texture, participants selected the cycle rate they felt most accurately matched the visual texture. This procedure was repeated for each texture type, with the order of textures presented randomly for each participant.
@@ -148,6 +150,7 @@ The participants from Experiment 1 were also involved in Experiment 2. This expe
 Collectively, these experiments provided insights into participants' perceptual sensitivity to different vibration cycle rates and evaluated the realism of tactile sensations corresponding to varied virtual textures.
 
 \subsubsection{Post-Experiment Evaluation}
+\vspace{-5pt} 
 After completing both experiments, participants provided subjective feedback through a questionnaire consisting of 12 statements (Table~\ref{tab:evaluation_questions}). Each statement was rated on a Likert scale from 1 (strongly disagree) to 7 (strongly agree), covering virtual hand embodiment, tactile realism, and immersion. Questions about the sense of virtual hand ownership and control (e.g., Q1, Q3, Q4, Q8) were based on the Virtual Embodiment Questionnaire (VEQ). Statements assessing how realistic and aligned the tactile sensations felt (Q2, Q6, Q7, Q10) were guided by the Haptic Experience (HX) model. Additionally, overall immersion (Q12) was evaluated according to concepts from the Presence Questionnaire (PQ).
 
 \begin{table}[htbp]
@@ -178,6 +181,7 @@ After completing both experiments, participants provided subjective feedback thr
 Participant responses provided qualitative insights into embodiment, tactile realism, and immersion, complementing the quantitative outcomes from Experiments~1 and 2.
 
 \subsubsection{Results}
+\vspace{-5pt} 
 \textbf{Experiment 1: Distinguishing Haptic Feedback: }
 Participants' accuracy in identifying the three PWM cycle rates (0.2, 0.5, and 1.0) is summarized in Figure~\ref{fig:ex1_results}. The highest accuracy (26/30) was achieved at the 1.0 cycle rate, suggesting that participants found higher-intensity vibrations easier to identify. Accuracy slightly decreased at lower cycle rates (0.5: 24/30; 0.2: 23/30), indicating that subtler vibrations were more challenging to distinguish. This aligns with prior research indicating that higher vibration intensities yield clearer tactile distinctions. These findings confirm the effectiveness of PWM cycle rates in distinguishing tactile sensations.
 \begin{figure}\centering
@@ -205,8 +209,9 @@ Subjective feedback (Figure~\ref{fig:questionnaire_results}) revealed high ratin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% PhD Research
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\vspace{-35pt} 
 \section{Future Plan}
+\vspace{-10pt} 
 
 My PhD research will focus on enhancing the realism of tactile feedback in Virtual Reality (VR) using perception-based techniques with a small number of actuators. The glove system developed during my Master’s studies used PWM to simulate different textures. While this approach was effective for basic texture rendering, it is difficult to produce fine detail due to the limited number of vibration motors. To address this, I aim to develop a system that uses perceptual illusions and optimized feedback patterns to create the feeling of high-resolution textures without adding hardware complexity.
 
@@ -219,8 +224,10 @@ To evaluate the proposed system, I will conduct user studies comparing perceptio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% Annual Research Plan
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{-20pt} 
 \section{Annual Research Plan}
 \label{sec:conc}
+\vspace{-10pt} 
 My PhD research plan includes the following topics:
 \begin{itemize}
 	\item Design and implementation of patterned vibration feedback for texture simulation.
