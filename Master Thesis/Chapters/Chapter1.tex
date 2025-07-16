@@ -1,0 +1,46 @@
+% Chapter 1
+
+\chapter{Introduction} % Main chapter title
+
+\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{\bfseries#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+%----------------------------------------------------------------------------------------
+This chapter presents backgrounds, objective, and the structure of this thesis.
+
+\section{Backgrounds}
+Virtual reality (VR) is a relatively new and widely used technology. VR can immerse users in rich VR experience and it is used for a variety of purposes such as automotive industry~\cite{4290174}, healthcare~\cite{8446075}, retail~\cite{9522516} and education~\cite{8446486}. A virtual environment provided by VR is designed along a demand for those purposes and an HMD (a head-mounted display) allows users to see the virtual environment in an immersive way and VR controllers allow them to interact with the environments in an intuitive way. An HMD is a display device that has a pair of displays in front of each eye and it is worn on the head or as part of a helmet. 
+
+Room-scale VR~\cite{7892373} is a design paradigm of VR that enables users to freely move around with their real-life movements replicated in a virtual environment. A user's movements are tracked by 360-degree tracking technology such as infrared stationary sensors and they are instantly rendered in the virtual environment. This enables the user to carry out actions like moving around a room by making natural movements.
+
+
+
+While a user is wearing an HMD, he/she cannot see the surroundings and identify his/her current position in the physical space. The user is also unaware of the facing direction. Under a limited physical space, a virtual environment has a wide range of space sizes~\cite{10.1145/1272582.1272590}. Therefore, there is a chance that the user collides with physical walls while walking in the virtual environment. Redirected Walking~\cite{7892373} is a VR locomotion technique. This technique can change the facing direction of the user to avoid colliding with physical walls. In addition, Steer to Center (S2C) is another VR locomotion technique as well. This technique is implemented based on Redirected Walking and it steers the user to the center point of the physical space to avoid collisions with walls. That means the user is steered to the center of his/her room when the collision is predicted.
+
+In a case of multiple users in VR sharing the same physical space~\cite{7892235}, it is not only the problem of colliding with the walls but also between users. While users enjoy VR experiences in the same physical space, they could collide with each other. E. R. Bachmanm et al.~\cite{6549377} discusses two users sharing the same physical space and proposed a new method (later called Holm's method) base on Steer to Offset Center (S2OC) method which is based on S2C. For S2OC, two separate target points are defined and each of two users is steered to either different target point. Holm's method gets the idea from S2OC. When a collision between users is detected, two target points for steering are determined in consideration with positions and facing directions of the users. Each of the users is steered to either different target point to avoid the collision. The details are found in Chapter~\ref{Chapter2}. S2OC and the Holm's method are expected to work well for collision avoidance between two users.
+
+This thesis discusses collision avoidance between two or more users. This thesis proposes a method based on time-dependent synced-rotational gains and conducts a series of experiments on its feasibility.
+
+
+
+%----------------------------------------------------------------------------------------
+
+\section{Objective}
+
+The aim of this thesis is to analyze the sensitivity of humans for rotation of a virtual environment and to figure out the properties of the rotation so that humans are unaware of it. It also includes a proposal for a collision avoidance method with multiple VR users sharing the same physical space.
+
+\section{Thesis structure}
+This thesis consists of six chapters. Chapter~\ref{Chapter1}  introduces the background, objectives, and structure of this thesis. Chapter~\ref{Chapter2} presents the related work. Chapter~\ref{Chapter3} describes the proposed idea of time-dependent synced-rotational gains. Chapter~\ref{Chapter4} conducts an experiment on performance. Chapter~\ref{Chapter5} discusses deployment of the proposed method in a practical scenario. Finally, Chapter~\ref{Chapter6} gives the conclusion.
+
+
+
+
+
