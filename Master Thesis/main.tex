@@ -43,7 +43,6 @@ headsepline,
 %consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 \usepackage{CJKutf8} % Japanese
-
 %\usepackage{xeCJK}
 \usepackage{pdfpages}
 \usepackage{bibentry} 
@@ -118,11 +117,11 @@ headsepline,
 %	THESIS INFORMATION
 %----------------------------------------------------------------------------------------
 
-\thesistitle{A collision avoidance method for multiple users in VR based on time-dependent synced-rotational gains and its performance} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\thesistitle{Development of a Wearable Haptic Feedback Device for Enhancing Immersion in Virtual Reality} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
 \supervisor{Makio Ishihara} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
 \examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
 \degree{Master} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
-\author{Rakcharoen Natchapon} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+\author{Korntawat Witchuvanit} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
 \addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
 
 \subject{Engineering} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
@@ -175,7 +174,7 @@ headsepline,
 	\hrule height 2pt
 	
 	\vspace{+0.5cm}
-		\textbf{A collision avoidance method for multiple users in VR based on time-dependent synced-rotational gains and its performance}
+		\textbf{Development of a Wearable Haptic Feedback Device for Enhancing Immersion in Virtual Reality}
 
 	
 	\vspace{+0.5cm}
@@ -186,8 +185,8 @@ headsepline,
 	
 	
 	
-	Rakcharoen Natchapon\\
-	FM20202\\
+	Korntawat Wtichuvanit\\
+	FM23201\\
 	\vspace{+3.0cm}
 	{\Large{
 			Supervisor\\
@@ -199,7 +198,7 @@ headsepline,
 	
 
 	
-	{\Large July 2022  \\\vspace{+1cm}\Large Graduate School of Engineering \\Fukuoka Institute of Technology\\ Japan}
+	{\Large July 2025  \\\vspace{+1cm}\Large Graduate School of Engineering \\Fukuoka Institute of Technology\\ Japan}
 	
 \end{LARGE}
 \end{center}
@@ -247,12 +246,12 @@ headsepline,
 
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-When multiple VR users working in their own immersive virtual space share the same physical one, some users might collide with one another.  To deal with a collision, the author has taken an approach of a time-dependent rotational-gain based redirected walking technique which gives a VR user constant rotation to the coordinates of his/her virtual space so that he/she would walk on a curved path in the physical one.  In the approach, a constant rotation of the coordinates is given to multiple VR users who are unaware they are on a collision course, so that they are likely to turn in the same direction, away from the collision.  The objective of this thesis is to confirm the feasibility of the approach and comparing performance of collision avoidance between the proposed method and Holm's one. The collision avoidance from Holm's one is designed for two users sharing the same physical space. However, it isn't good at more than two users to share the space. The number of collisions was significantly decreased after employing the proposed method.
+Virtual reality (VR) provides immersive experiences through multisensory feedback, enhancing user interaction with digital environments. One key immersion aspect is texture rendering, which is commonly achieved through visual and auditory cues. Incorporating haptic feedback for realistic texture perception is a mainstream of Human-Computer Interaction (HCI) research activities and it remains a challenge. Most existing methods rely on hand-held devices, often limiting natural hand movements. This research explores the development and performance of a wearable device equipped with flex sensors, a Motion Processing Unit (MPU), and a coin motor, enabling texture perception at three vibration granularities. The results show that participants can distinguish various textures based on their smoothness, particularly identifying differences between them.
 
 \vspace{5mm}
 
 
-keyword: Virtual Reality,Redirected Walking, Multiple VR Users
+keyword: Human computer interaction (HCI), Texture Perception, Haptic devices
 \end{abstract}
 \clearpage
 %----------------------------------------------------------------------------------------
@@ -266,11 +265,11 @@ keyword: Virtual Reality,Redirected Walking, Multiple VR Users
 	\addchaptertocentry{\abstractname}
 		% Add the abstract to the table of contents
 		\begin{CJK*}{UTF8}{min}
-			複数のVRユーザーが同じ現実空間を共有している場合, 一部のユーザーは互いに衝突する可能性がある. 衝突に対処するために, 著者はTime-dependent synced-rotational gainベースのリダイレクト歩行技術のアプローチを採用した. これによ, VRユーザーは仮想空間の座標に一定の回転を与え, 現実空間で曲線上を歩くことになる. 本提案手法では, ユーザーに気付かれずに仮想世界の座標に一定の回転が与えられるため, 衝突から離れる方向に曲がり, 衝突を回避できることが期待できる. 本論文では, 本提案手法の実現可能性を確認し, 本手法とHolmの方法の間で衝突回避の性能を比較す. Holmの手法は, 同じ現実空間を共有する2人のVRユーザーのために設計されており, 3人以上の場合には適していない. 本提案手法により, 衝突回数が有意に減少したことを示す.
+			バーチャルリアリティ（VR）は、多感覚フィードバックによって没入型体験を提供し、ユーザーとデジタル環境とのインタラクションを向上させる。没入感を形成する重要な要素の一つがテクスチャの再現であり、一般的に視覚や聴覚を通じて提示されるが、リアルな質感を伝えるための触覚力を取り入れることはヒューマンコンピュータインタラクション（HCI）研究の主流であり、いまだに課題も多い。既存の手法の多くは手持ち式デバイスに依存するため、自然な手の動きを妨げることが多い。本研究では、フレックスセンサー、モーション処理ユニット（MPU）、およびコイン型振動モーターを備えたウェアラブルデバイスを開発し、3段階の振動粒度によるテクスチャ知覚の性能評価を行った。その結果、参加者は提示されたテクスチャの滑らかさに基づいて異なる質感を区別できること、特に各テクスチャ間の差異を識別可能であることが示された。
 		\vspace{5mm}
 		
 		
-		キーワード: 仮想世界, リダイレクトウォーキング, 複数のVRユーザー
+		キーワード: ヒューマンコンピュータインタラクション（HCI）、テクスチャ知覚、触覚デバイス
 		
 		{\CJKfamily{mincho}}
 	%	
