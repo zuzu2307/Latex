@@ -10,21 +10,15 @@
 
 
 
-To evaluate the effectiveness and practicality of the developed wearable haptic glove, we conducted two structured experiments focusing on both perceptual discrimination and subjective realism of vibrotactile feedback. 
-In Experiment 1, we assessed participants' ability to distinguish between three distinct vibration cycle rates delivered through the glove. 
-In Experiment 2 investigated the relationship between the vibration cycle rates and the perceived realism of various virtual textures. 
+To evaluate the effectiveness and practicality of the developed wearable haptic glove, I conducted two structured experiments focusing on both perceptual discrimination and subjective realism of vibrotactile feedback. 
+In Experiment 1, I assessed participants' ability to distinguish between three distinct vibration cycle rates delivered through the glove. 
+In Experiment 2, I investigated the relationship between the vibration cycle rates and the perceived realism of various virtual textures. 
 Together, these experiments provided both quantitative performance data and qualitative user feedback, offering a comprehensive evaluation of the glove’s performance in enhancing virtual texture perception and supporting natural hand interactions in virtual reality applications.
 
 \section{Equipment and Specifications}
 The experimental setup included a desktop host machine with an Intel® Core™ i7-13700 processor, an NVIDIA® GeForce RTX™ 3050 graphics card, and 16 GB of system memory. This configuration provided adequate computational power for rendering real-time virtual environments and processing haptic feedback with low latency. The virtual environment was developed using Unity 2022.3.23f1 (LTS), which offered a stable platform for implementing custom interactions and integrating external hardware devices.
 
 The wearable haptic glove, developed in this study, was connected to the host system. The glove’s onboard microcontroller handled real-time sensor data acquisition and vibration control, while Unity managed virtual object interactions and feedback synchronization. This combination of hardware and software provided a responsive and immersive environment for evaluating virtual texture perception and gesture-based control in virtual reality, shown in Fig.~\ref{fig:unity} and Fig.~\ref{fig:experiment}.
-
-\begin{figure}[H]\centering
-	\includegraphics[width=0.9\textwidth]{Pictures/unity.png}%imagine location
-	\caption{Unity and developed haptic glove.}\label{fig:unity}%use name for ref.
-	
-\end{figure}
 
 \begin{figure}[H]\centering
 	\includegraphics[width=0.9\textwidth]{Pictures/experiment.png}%imagine location
@@ -72,7 +66,7 @@ This method offers a straightforward yet effective way to represent textural pro
 \section{Experiment}
 
 \subsection{Experiment 1: Distinguishing Haptic Feedback}
-We recruited a total of six participants, all right-handed and aged between 24 and 27 years, for the first experiment. None of the participants had prior experience with the specific haptic device and reported no known sensory or motor impairments. The primary aim of this experiment was to conduct a blind classification test to evaluate their ability to reliably distinguish between three predefined vibration cycle rates: 0.2, 0.5, and 1.0 cycles per second. These cycle rates were chosen to represent three distinct levels of vibration rhythm, intended to simulate variations in virtual surface textures.
+I recruited a total of six participants, all right-handed and aged between 24 and 27 years, for the first experiment. None of the participants had prior experience with the specific haptic device and reported no known sensory or motor impairments. The primary aim of this experiment was to conduct a blind classification test to evaluate their ability to reliably distinguish between three predefined vibration cycle rates: 0.2, 0.5, and 1.0 cycles per second. These cycle rates were chosen to represent three distinct levels of vibration rhythm, intended to simulate variations in virtual surface textures.
 
 Before the formal testing session, all participants went through a familiarization phase where they experienced each of the three cycle rates individually. During this phase, each cycle rate was presented multiple times in a labeled, non-randomized order. This allowed participants to establish a clear tactile reference for the “low,” “medium,” and “high” vibration patterns. Participants were encouraged to ask questions and could repeat the familiarization process as needed to ensure they fully understood each vibration profile before moving on to the blind testing phase. This preparation aimed to minimize learning effects during the main experiment and ensure that the evaluation focused solely on the participants' ability to discriminate tactile sensations.
 
@@ -90,7 +84,7 @@ The participants from Experiment 1 also participated in Experiment 2, ensuring c
 
 Each virtual texture was systematically paired with a corresponding vibration cycle rate. The brick texture was linked to the lowest cycle rate (0.2) to represent a coarse, rugged sensation; grass was assigned a medium cycle rate (0.5) to simulate moderate roughness; and marble was paired with the highest cycle rate (1.0) to evoke a smooth and continuous tactile experience. Participants were instructed to touch each virtual texture multiple times using a haptic glove. They were asked to focus on the synchronization between the visual and tactile feedback, noting how accurately the vibration pattern reflected the expected feel of each material.
 
-\textbf{Procedure:} After the first experiment, participants took a 5-minute break before proceeding to the second experiment. In this phase, participants sequentially interacted with each virtual texture (Figure~\ref{fig:experiment2_setup}), experiencing all three vibration cycle rates (0.2, 0.5, and 1.0). After experiencing each set of cycle rates for a given texture, participants selected the cycle rate they felt most accurately matched the visual texture. This procedure was repeated for each texture type, with the order of textures presented randomly for each participant.
+\textbf{Procedure:} After the first experiment, participants took a 5-minute break before proceeding to the second experiment. In this phase, participants sequentially interacted with each virtual texture (Figure~\ref{fig:experiment2_setup}), experiencing all three vibration cycle rates (0.2, 0.5, and 1.0). After experiencing each set of cycle rates for a given texture, participants selected the cycle rate they felt most accurately matched the visual texture. This procedure was repeated for each texture type for each participant.
 
 \begin{figure}[H]\centering
 	\includegraphics[width=1\textwidth]{Pictures/ex2.png}%imagine Avation
