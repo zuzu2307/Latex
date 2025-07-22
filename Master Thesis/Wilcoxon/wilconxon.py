@@ -29,36 +29,31 @@ categories = {
     'Immersion': ['Q11', 'Q12']
 }
 
-# --- 3. Calculate Composite Median Scores for Each Category per Participant ---
-df_category_scores = pd.DataFrame() # New DataFrame to store category scores
-
-for category_name, q_list in categories.items():
-    # Select columns for the current category
-    category_df = df_raw[q_list]
-    # Calculate the median score for each participant across the questions in this category
-    # .apply(np.nanmedian, axis=1) handles potential NaNs if any, and calculates row-wise median
-    df_category_scores[category_name] = category_df.apply(np.nanmedian, axis=1)
-
-# --- 4. Perform Wilcoxon Test on Category Scores ---
+# --- 3. Perform Wilcoxon Test on Individual Responses for Each Category ---
 results_data_category = []
 
-for category_name in df_category_scores.columns:
-    category_scores = df_category_scores[category_name]
-    n = len(category_scores) # Number of participants for this category score
+for category_name, q_list in categories.items():
+    # from all participants, and flatten them into one list.
+    pooled_responses = df_raw[q_list].values.flatten()
+    pooled_responses = pooled_responses[~np.isnan(pooled_responses)] # Remove any NaNs if present
 
-    median_score = category_scores.median() # Median of the *composite category scores*
-    q1 = category_scores.quantile(0.25)
-    q3 = category_scores.quantile(0.75)
+    n_value_for_table = len(pooled_responses) # N is now the total count of individual responses for the category
+
+    median_score = np.median(pooled_responses) # Median of the *pooled* individual responses
+    q1 = np.quantile(pooled_responses, 0.25)
+    q3 = np.quantile(pooled_responses, 0.75)
     iqr = f"{q1:.2f} - {q3:.2f}"
 
     # Calculate differences from the neutral point for Wilcoxon test
-    diffs = category_scores - neutral_point
+    diffs = pooled_responses - neutral_point
 
+    # Perform Wilcoxon test on the pooled data
+    # (Acknowledging the statistical caveat about independence for this specific test)
     if len(diffs[diffs != 0]) > 0:
         stat, p_value = wilcoxon(diffs, alternative='two-sided', method='exact')
     else:
         stat = np.nan
-        p_value = 1.0
+        p_value = 1.0 # Or appropriate value if no non-zero diffs
 
     sig_marker = ''
     sig_text = 'Not Significant'
@@ -72,7 +67,6 @@ for category_name in df_category_scores.columns:
         sig_marker = '*'
         sig_text = 'Significant'
 
-    # Determine Interpretation/Conclusion for the table
     interpretation = "Not significantly diff. from Neutral."
     if sig_text == 'Significant':
         if median_score > neutral_point:
@@ -82,18 +76,10 @@ for category_name in df_category_scores.columns:
         else:
             interpretation = "Significantly different from Neutral."
 
-    # Special handling for Immersion category if Q11 is influential
-    if category_name == 'Immersion':
-        if sig_text == 'Significant':
-            if median_score > neutral_point:
-                interpretation = "Significantly higher than Neutral (indicating strong immersion)."
-            elif median_score < neutral_point:
-                interpretation = "Significantly lower than Neutral (indicating low immersion)."
-
 
     results_data_category.append({
         'Category': category_name,
-        'N': n,
+        'N': n_value_for_table, # This N is now the total pooled responses
         'Median': median_score,
         'IQR': iqr,
         'Test Stat (W)': stat,
@@ -106,5 +92,5 @@ for category_name in df_category_scores.columns:
 df_results_category = pd.DataFrame(results_data_category)
 
 # Print the results DataFrame for categories
-print("--- Wilcoxon Signed-Rank Test Results Table for Categories ---")
+print("--- Wilcoxon Signed-Rank Test Results Table for Categories (Pooled Individual Responses) ---")
 print(df_results_category.to_string(index=False))
