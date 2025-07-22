@@ -61,55 +61,33 @@ However, the scores related to embodiment were lower, particularly for the follo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{General Discussion}  
 
-This section provides a statistical analysis of the subjective questionnaire data to evaluate the significance of participant responses. Because the Likert scale is ordinal, the Wilcoxon Signed-Rank test was used for each of the 12 questionnaire items. This non-parametric test assesses whether the median scores differ significantly from the neutral point of 4.0, which is the middle of the 1 to 7 scale. A significant result indicates notable agreement or disagreement among participants. The complete results—including medians, interquartile ranges (IQR), test statistics, and p-values—are summarized in Table~\ref{tab:wilcoxon_results_final_exact}.
+This section presents a detailed statistical analysis of the subjective questionnaire data, organized into meaningful categories to assess the significance of participants' perceptions. To account for the ordinal nature of the Likert scale responses and to establish a comparison with a neutral baseline, we calculated composite median scores for each category for every participant. We then performed a Wilcoxon Signed-Rank test for each of the three categories, comparing their composite median scores to a neutral point of 4.0. The comprehensive statistical results for these categories are summarized in Table~\ref{tab:wilcoxon_category_results}.
 
-The statistical analysis indicated that only one item, Q10 (“I had the sensation that I could feel the texture of objects through the virtual hand”), produced a statistically significant result. With a median score of 5.0, Q10 was notably higher than the neutral point ($W = 0.0$, $p = 0.031$). This outcome supports the effectiveness of the vibration-based texture feedback, demonstrating that participants were able to perceive virtual textures through the haptic glove with statistical significance. This finding underscores a key success in enhancing tactile realism within the system.
+The analysis showed a statistically significant result in the category “Realistic and Aligned Tactile Sensations Felt,” which included questions Q2, Q6, Q7, Q9, and Q10. These questions examined participants' perceptions of the natural alignment between tactile sensations and the virtual hand, as well as their ability to perceive textures and object properties through haptic feedback. The category achieved a composite median score of 5.0, which is significantly higher than the neutral point ($W = 0.0$, $p = 0.025$). This finding provides statistical evidence that the haptic glove effectively conveyed tactile realism. Participants were particularly able to experience aligned tactile feedback and recognize textures through the virtual hand. This outcome represents a key success of the system's vibrotactile feedback approach.
 
-In contrast, the Wilcoxon Signed-Rank test did not find any statistically significant differences from the neutral point of 4.0 for the remaining questionnaire items. This includes items that had high median scores, such as Q7 (“When I touched the virtual plane, it felt as if my real hand was also being touched,” median = 5.0, $p = 0.062$) and Q6 (“The tactile sensations I perceived felt naturally aligned with the virtual hand,” median = 5.0, $p = 0.062$).
+In contrast, the 'Hand Ownership and Control' category includes several questions: Q1 ('I felt as if the virtual hands were my own'), Q3 ('My movements were accurately replicated by the virtual hand'), Q4 ('I felt I had control over the virtual hand'), Q5 ('The virtual hand was naturally connected to my body'), and Q8 ('Movements felt natural'). This category did not show a statistically significant difference from a neutral point, with a composite median score of 3.5 ($W=0.0$, $p=0.083$). Although the results slightly leaned towards a diminished sense of ownership and control, the trend was not strong enough to be considered statistically significant given the sample size. This indicates that participants' perceptions regarding the feeling of ownership over the virtual hands, their natural connection to the body, and the accuracy and naturalness of movement replication remained largely neutral or varied around neutrality in a statistically non-significant way.
 
-Similarly, items related to overall positive experiences, control fidelity, and immersion—such as Q2 (median = 5.0, $p = 0.062$), Q4 (median = 4.0, $p = 1.000$), and Q12 (median = 4.0, $p = 0.500$)—did not produce statistically significant results. 
-
-A noteworthy observation pertains to question 11 (“I felt a mismatch between my real hand and the virtual hand”), which was phrased negatively. In this context, higher scores indicate a greater sense of mismatch. The analysis showed a median score of 4.0 ($W = 0.0$, $p = 1.000$), indicating no statistically significant deviation from the neutral point. 
-
-Finally, for the embodiment-related items—Q1 (“I felt as if the virtual hands were my own”; median = 3.0, $p = 0.125$), Q5 (“The virtual hand was naturally connected to my body”; median = 3.0, $p = 0.062$), and Q8 (“Movements felt natural”; median = 3.0, $p = 0.062$)—the median scores were descriptively lower than neutral, yet none reached statistical significance. 
+Similarly,  the 'Immersion' category, which includes Question 11 ('I felt a mismatch between my real hand and the virtual hand') and Question 12 ('Overall, I felt immersed in the virtual environment'), did not show a statistically significant difference from the neutral point. The composite median score was 4.25 ($W=0.0$, $p=0.102$). This suggests that participants' overall sense of immersion and their feelings of mismatch (as reflected in Question 11, which is a negatively worded item) were not statistically different from a neutral perspective.
 
 \begin{table}[H]
     \centering
-    \caption{Wilcoxon Signed-Rank Test Results for Questionnaire Items}
-    \label{tab:wilcoxon_results_final_exact}
-    \begin{tabular}{@{} l c c c c S[table-format=1.5] l p{1.5cm} @{}} % Adjusted S[table-format] for p-value precision
+    \caption{Wilcoxon Signed-Rank Test Results for Questionnaire Categories}
+    \label{tab:wilcoxon_category_results}
+    \begin{tabular}{@{} p{2.5cm} c c c c S[table-format=1.6] l p{1.5cm} @{}} % Changed 'l' to 'p{3.5cm}' for the first column
         \toprule
-        \textbf{Question} & \textbf{N} & \textbf{Median} & \textbf{IQR} & \textbf{Test Stat (W)} & \textbf{\textit{p}-value} & \textbf{Sig.} & \textbf{Conclusion} \\
+        \textbf{Category} & \textbf{N} & \textbf{Median} & \textbf{IQR} & \textbf{Test Stat (W)} & \textbf{\textit{p}-value} & \textbf{Sig.} & \textbf{Conclusion} \\
         \midrule
-        Q1  & 6 & 3.0 & 3.00 - 3.75 & 0.0 & 0.1250 & & No diff. \\ 
+        Hand Ownership \\ and Control & 6 & 3.50 & 3.00 - 4.00 & 0.0 & 0.083265 & & No diff. \\
         \midrule
-        Q2  & 6 & 5.0 & 5.00 - 5.00 & 0.0 & 0.0625 & & No diff. \\ 
+        Realistic \\ Tactile Sensations Felt & 6 & 5.00 & 5.00 - 5.00 & 0.0 & 0.025347 & * & Sig. higher than Neutral. \\
         \midrule
-        Q3  & 6 & 4.0 & 3.25 - 4.00 & 0.0 & 0.5000 & & No diff. \\ 
-        \midrule
-        Q4  & 6 & 4.0 & 4.00 - 4.00 & 0.0 & 1.0000 & & No diff. \\ 
-        \midrule
-        Q5  & 6 & 3.0 & 3.00 - 3.00 & 0.0 & 0.0625 & & No diff. \\ 
-        \midrule
-        Q6  & 6 & 5.0 & 5.00 - 5.00 & 0.0 & 0.0625 & & No diff. \\ 
-        \midrule
-        Q7  & 6 & 5.0 & 5.00 - 5.00 & 0.0 & 0.0625 & & No diff. \\ 
-        \midrule
-        Q8  & 6 & 3.0 & 3.00 - 3.00 & 0.0 & 0.0625 & & No diff. \\ 
-        \midrule
-        Q9  & 6 & 4.0 & 4.00 - 4.00 & 0.0 & 1.0000 & & No diff. \\ 
-        \midrule
-        Q10 & 6 & 5.0 & 5.00 - 5.75 & 0.0 & 0.0313 & * & Sig. higher than Neutral. \\ 
-        \midrule
-        Q11 & 6 & 4.0 & 4.00 - 4.00 & 0.0 & 1.0000 & & No diff. \\ 
-        \midrule
-        Q12 & 6 & 4.0 & 4.00 - 4.75 & 0.0 & 0.5000 & & No diff. \\ 
+        Immersion & 6 & 4.25 & 4.00 - 4.50 & 0.0 & 0.102470 & & No diff. \\
         \bottomrule
     \end{tabular}
-    \caption*{Note: Significance levels: $^* p < 0.05$, $^{**} p < 0.01$, $^{***} p < 0.001$. Test Statistic (W) is the sum of ranks of the less frequent sign among non-zero differences; it is 0.0 when all non-zero differences have the same sign. "No diff." indicates no statistically significant difference from the neutral point of 4.0.}
+    \caption*{Note: Significance levels: $^* p < 0.05$, $^{**} p < 0.01$, $^{***} p < 0.001$. The category median is the median of each participant's composite median score for that category. Test Statistic (W) is the sum of ranks of the less frequent sign among non-zero differences; it is 0.0 when all non-zero differences have the same sign. "No diff." indicates no statistically significant difference from the neutral point of 4.0.}
 \end{table}
 
-In summary, the subjective evaluation provided valuable insights into the overall user experience. The system demonstrated a statistically significant improvement in tactile texture perception (Q10), confirming its effectiveness in delivering realistic texture feedback. However, participants' perceptions of other key dimensions—such as embodiment, naturalness of movement, and overall immersion—were often described as positive or moderate, but did not reach statistical significance when compared to a neutral baseline. These results indicate that, while the current prototype establishes a promising foundation for tactile interaction in virtual reality, further improvements are needed to consistently enhance subjective experiences across multiple dimensions of presence and embodiment.
+In summary, the subjective evaluation provided valuable insights into the overall user experience. The system demonstrated a statistically significant improvement in the 'Realistic and Aligned Tactile Sensations Felt' category, confirming its effectiveness in delivering realistic and aligned tactile feedback. However, participants' perceptions of other key dimensions—Hand Ownership and Control, and Immersion—were often described as positive or moderate, but did not reach statistical significance when compared to a neutral baseline. These results indicate that, while the current prototype establishes a promising foundation for tactile interaction in virtual reality, further improvements are needed to consistently enhance subjective experiences across multiple dimensions of presence and embodiment.
 
 Furthermore, qualitative feedback from some participants revealed a significant practical limitation: the fixed glove size caused discomfort and poor fit for certain individuals. This ergonomic issue is likely a factor in the non-significant results related to embodiment and naturalness of movement. An improper fit can disrupt sensory alignment and diminish the sense of virtual hand ownership. To address this limitation, future iterations of the system will focus on creating adjustable designs. The goal is to enhance comfort and optimize the effectiveness of tactile feedback, ultimately providing more realistic and immersive virtual reality experiences.
 
@@ -118,3 +96,53 @@ Furthermore, qualitative feedback from some participants revealed a significant 
 % The simplicity of the system design, combined with effective texture differentiation, highlights the suitability of this approach for lightweight, real-time haptic feedback applications in virtual reality.
 
 % Together, the experimental performance metrics and subjective questionnaire results show that the proposed PWM-based tactile feedback method significantly improves users' ability to distinguish and realistically perceive virtual textures, thereby enhancing the overall sense of immersion in virtual environments. These findings are consistent with previous literature~\cite{10.1145/3025453.3025812,10.1007/s00542-023-05486-x}.  that emphasizes the importance of tactile granularity and frequency modulation for realistic texture rendering. Moving forward, efforts should focus on strengthening the sense of embodiment, particularly by improving hand tracking fidelity and further optimizing vibration characteristics to accommodate a broader range of virtual materials. This will help achieve a more cohesive and immersive VR experience.
+
+% The statistical analysis indicated that only one item, Q10 (“I had the sensation that I could feel the texture of objects through the virtual hand”), produced a statistically significant result. With a median score of 5.0, Q10 was notably higher than the neutral point ($W = 0.0$, $p = 0.031$). This outcome supports the effectiveness of the vibration-based texture feedback, demonstrating that participants were able to perceive virtual textures through the haptic glove with statistical significance. This finding underscores a key success in enhancing tactile realism within the system.
+
+% In contrast, the Wilcoxon Signed-Rank test did not find any statistically significant differences from the neutral point of 4.0 for the remaining questionnaire items. This includes items that had high median scores, such as Q7 (“When I touched the virtual plane, it felt as if my real hand was also being touched,” median = 5.0, $p = 0.062$) and Q6 (“The tactile sensations I perceived felt naturally aligned with the virtual hand,” median = 5.0, $p = 0.062$).
+
+% Similarly, items related to overall positive experiences, control fidelity, and immersion—such as Q2 (median = 5.0, $p = 0.062$), Q4 (median = 4.0, $p = 1.000$), and Q12 (median = 4.0, $p = 0.500$)—did not produce statistically significant results. 
+
+% A noteworthy observation pertains to question 11 (“I felt a mismatch between my real hand and the virtual hand”), which was phrased negatively. In this context, higher scores indicate a greater sense of mismatch. The analysis showed a median score of 4.0 ($W = 0.0$, $p = 1.000$), indicating no statistically significant deviation from the neutral point. 
+
+% Finally, for the embodiment-related items—Q1 (“I felt as if the virtual hands were my own”; median = 3.0, $p = 0.125$), Q5 (“The virtual hand was naturally connected to my body”; median = 3.0, $p = 0.062$), and Q8 (“Movements felt natural”; median = 3.0, $p = 0.062$)—the median scores were descriptively lower than neutral, yet none reached statistical significance. 
+
+
+% \begin{table}[H]
+%     \centering
+%     \caption{Wilcoxon Signed-Rank Test Results for Questionnaire Items}
+%     \label{tab:wilcoxon_results_final_exact}
+%     \begin{tabular}{@{} l c c c c S[table-format=1.5] l p{1.5cm} @{}} % Adjusted S[table-format] for p-value precision
+%         \toprule
+%         \textbf{Question} & \textbf{N} & \textbf{Median} & \textbf{IQR} & \textbf{Test Stat (W)} & \textbf{\textit{p}-value} & \textbf{Sig.} & \textbf{Conclusion} \\
+%         \midrule
+%         Q1  & 6 & 3.0 & 3.00 - 3.75 & 0.0 & 0.1250 & & No diff. \\ 
+%         \midrule
+%         Q2  & 6 & 5.0 & 5.00 - 5.00 & 0.0 & 0.0625 & & No diff. \\ 
+%         \midrule
+%         Q3  & 6 & 4.0 & 3.25 - 4.00 & 0.0 & 0.5000 & & No diff. \\ 
+%         \midrule
+%         Q4  & 6 & 4.0 & 4.00 - 4.00 & 0.0 & 1.0000 & & No diff. \\ 
+%         \midrule
+%         Q5  & 6 & 3.0 & 3.00 - 3.00 & 0.0 & 0.0625 & & No diff. \\ 
+%         \midrule
+%         Q6  & 6 & 5.0 & 5.00 - 5.00 & 0.0 & 0.0625 & & No diff. \\ 
+%         \midrule
+%         Q7  & 6 & 5.0 & 5.00 - 5.00 & 0.0 & 0.0625 & & No diff. \\ 
+%         \midrule
+%         Q8  & 6 & 3.0 & 3.00 - 3.00 & 0.0 & 0.0625 & & No diff. \\ 
+%         \midrule
+%         Q9  & 6 & 4.0 & 4.00 - 4.00 & 0.0 & 1.0000 & & No diff. \\ 
+%         \midrule
+%         Q10 & 6 & 5.0 & 5.00 - 5.75 & 0.0 & 0.0313 & * & Sig. higher than Neutral. \\ 
+%         \midrule
+%         Q11 & 6 & 4.0 & 4.00 - 4.00 & 0.0 & 1.0000 & & No diff. \\ 
+%         \midrule
+%         Q12 & 6 & 4.0 & 4.00 - 4.75 & 0.0 & 0.5000 & & No diff. \\ 
+%         \bottomrule
+%     \end{tabular}
+%     \caption*{Note: Significance levels: $^* p < 0.05$, $^{**} p < 0.01$, $^{***} p < 0.001$. Test Statistic (W) is the sum of ranks of the less frequent sign among non-zero differences; it is 0.0 when all non-zero differences have the same sign. "No diff." indicates no statistically significant difference from the neutral point of 4.0.}
+% \end{table}
+
+% In summary, the subjective evaluation provided valuable insights into the overall user experience. The system demonstrated a statistically significant improvement in tactile texture perception (Q10), confirming its effectiveness in delivering realistic texture feedback. However, participants' perceptions of other key dimensions—such as embodiment, naturalness of movement, and overall immersion—were often described as positive or moderate, but did not reach statistical significance when compared to a neutral baseline. These results indicate that, while the current prototype establishes a promising foundation for tactile interaction in virtual reality, further improvements are needed to consistently enhance subjective experiences across multiple dimensions of presence and embodiment.
+% Furthermore, qualitative feedback from some participants revealed a significant practical limitation: the fixed glove size caused discomfort and poor fit for certain individuals. This ergonomic issue is likely a factor in the non-significant results related to embodiment and naturalness of movement. An improper fit can disrupt sensory alignment and diminish the sense of virtual hand ownership. To address this limitation, future iterations of the system will focus on creating adjustable designs. The goal is to enhance comfort and optimize the effectiveness of tactile feedback, ultimately providing more realistic and immersive virtual reality experiences.

@@ -1,5 +1,5 @@
-import numpy as np
 import pandas as pd
+import numpy as np
 from scipy.stats import wilcoxon
 
 # --- 1. Load Your Raw Data ---
@@ -22,32 +22,44 @@ df_raw = pd.DataFrame(raw_data)
 # Define the neutral point for your Likert scale
 neutral_point = 4.0
 
-# --- 2. Perform Calculations and Wilcoxon Test for Each Question ---
-results_data = [] # To store results for our table
+# --- 2. Define Categories and Map Questions ---
+categories = {
+    'Hand Ownership and Control': ['Q1', 'Q3', 'Q4', 'Q5', 'Q8'],
+    'Realistic and Aligned Tactile Sensations Felt': ['Q2', 'Q6', 'Q7', 'Q9', 'Q10'],
+    'Immersion': ['Q11', 'Q12']
+}
 
-for q_name in df_raw.columns:
-    n = len(df_raw[q_name]) # Number of participants
-    median_score = df_raw[q_name].median() # Median of raw scores
-    q1 = df_raw[q_name].quantile(0.25) # 25th percentile
-    q3 = df_raw[q_name].quantile(0.75) # 75th percentile
-    iqr = f"{q1:.2f} - {q3:.2f}" # Formatted IQR string
+# --- 3. Calculate Composite Median Scores for Each Category per Participant ---
+df_category_scores = pd.DataFrame() # New DataFrame to store category scores
+
+for category_name, q_list in categories.items():
+    # Select columns for the current category
+    category_df = df_raw[q_list]
+    # Calculate the median score for each participant across the questions in this category
+    # .apply(np.nanmedian, axis=1) handles potential NaNs if any, and calculates row-wise median
+    df_category_scores[category_name] = category_df.apply(np.nanmedian, axis=1)
+
+# --- 4. Perform Wilcoxon Test on Category Scores ---
+results_data_category = []
+
+for category_name in df_category_scores.columns:
+    category_scores = df_category_scores[category_name]
+    n = len(category_scores) # Number of participants for this category score
+
+    median_score = category_scores.median() # Median of the *composite category scores*
+    q1 = category_scores.quantile(0.25)
+    q3 = category_scores.quantile(0.75)
+    iqr = f"{q1:.2f} - {q3:.2f}"
 
     # Calculate differences from the neutral point for Wilcoxon test
-    diffs = df_raw[q_name] - neutral_point
+    diffs = category_scores - neutral_point
 
-    # Perform Wilcoxon Signed-Rank Test
-    # The test needs at least one non-zero difference.
     if len(diffs[diffs != 0]) > 0:
-        # 'alternative='two-sided'' checks if median is higher OR lower than neutral.
-        # 'method='exact'' is suitable for small sample sizes.
         stat, p_value = wilcoxon(diffs, alternative='two-sided', method='exact')
     else:
-        # If all responses are the neutral point, or no variation from it,
-        # it's not significantly different.
-        stat = np.nan # Not applicable, or can be set to 0 by some conventions
-        p_value = 1.0 # P-value is 1.0 if there's no difference to test
+        stat = np.nan
+        p_value = 1.0
 
-    # Determine significance level for table
     sig_marker = ''
     sig_text = 'Not Significant'
     if p_value < 0.001:
@@ -68,39 +80,31 @@ for q_name in df_raw.columns:
         elif median_score < neutral_point:
             interpretation = "Significantly lower than Neutral."
         else:
-            interpretation = "Significantly different from Neutral." # General case
+            interpretation = "Significantly different from Neutral."
 
-    # Special handling for Q11's interpretation due to negative wording
-    if q_name == 'Q11':
+    # Special handling for Immersion category if Q11 is influential
+    if category_name == 'Immersion':
         if sig_text == 'Significant':
             if median_score > neutral_point:
-                interpretation = "Significantly high on perceived mismatch."
+                interpretation = "Significantly higher than Neutral (indicating strong immersion)."
             elif median_score < neutral_point:
-                interpretation = "Significantly low on perceived mismatch."
-            else:
-                interpretation = "Significantly different on perceived mismatch."
-        else:
-            interpretation = "Neutral on perceived mismatch."
+                interpretation = "Significantly lower than Neutral (indicating low immersion)."
 
 
-    results_data.append({
-        'Question': q_name,
+    results_data_category.append({
+        'Category': category_name,
         'N': n,
         'Median': median_score,
         'IQR': iqr,
         'Test Stat (W)': stat,
         'p-value': p_value,
-        'Sig.': sig_marker, # Asterisks for the table
+        'Sig.': sig_marker,
         'Interpretation/Conclusion': interpretation
     })
 
-# Create the results DataFrame
-df_results = pd.DataFrame(results_data)
+# Create the results DataFrame for categories
+df_results_category = pd.DataFrame(results_data_category)
 
-# --- 3. Print the Results Table ---
-print("--- Wilcoxon Signed-Rank Test Results Table ---")
-# Use .to_string() for better console display without truncation
-# You can copy this output directly into your LaTeX table.
-print(df_results.to_string(index=False))
-
-print("\nAnalysis complete. The table data is printed above.")
+# Print the results DataFrame for categories
+print("--- Wilcoxon Signed-Rank Test Results Table for Categories ---")
+print(df_results_category.to_string(index=False))
