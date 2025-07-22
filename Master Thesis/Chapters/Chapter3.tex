@@ -12,11 +12,11 @@ This paper proposes a lightweight wearable haptic device designed to address the
 
 \newpage
 \subsection{ESP32 Microcontroller}
-The ESP32(Fig.~\ref{fig:esp32}) microcontroller serves as the central control unit for the proposed wearable haptic system. Developed by Espressif Systems, the ESP32 is a dual-core, low-power system-on-chip (SoC) designed for IoT and embedded applications. It offers a compact footprint, integrated Wi-Fi and Bluetooth connectivity, and extensive input/output (I/O) support~\cite{esp32docs}. With its small dimensions (approximately 25.5 mm × 18 mm for the ESP32-WROOM-32 variant), it is highly suitable for integration into wearable devices, where minimizing weight and bulk is essential.
+The ESP32(Fig.~\ref{fig:esp32}) microcontroller serves as the central control unit for the proposed wearable haptic system. Developed by Espressif Systems, the ESP32 is a dual-core, low-power system-on-chip (SoC) designed for IoT and embedded applications. It offers a compact footprint, integrated Wi-Fi and Bluetooth connectivity, and extensive input/output (I/O) support\cite{esp32docs}. With its small dimensions (approximately 25.5 mm × 18 mm for the ESP32-WROOM-32 variant), it is highly suitable for integration into wearable devices, where minimizing weight and bulk is essential.
 
 \begin{figure}[H]\centering
 	\includegraphics[width=1\textwidth]{Pictures/esp32.jpg}%imagine location
-	\caption{ESP32-DevKitC V4 with ESP32-WROOM-32 module soldered~\cite{esp32docs}}\label{fig:esp32}%use name for ref.
+	\caption{ESP32-DevKitC V4 with ESP32-WROOM-32 module soldered\cite{esp32docs}}\label{fig:esp32}%use name for ref.
 \end{figure}
 
 In the proposed system, the ESP32 is responsible for the real-time acquisition of hand motion and gesture data from the sensory module, which includes flex sensors and an inertial measurement unit. It processes these signals and outputs pulse width modulation signals to control a vibrotactile actuator. Additionally, the ESP32 facilitates communication with the virtual reality environment, transmitting hand movement data and receiving feedback commands. This setup supports a low-latency and fully mobile VR haptic interaction system.
@@ -28,7 +28,7 @@ Flex sensors(Fig.~\ref{fig:flex_sensor}) are the key components used to capture 
 
 \begin{figure}[H]\centering
 	\includegraphics[width=1\textwidth]{Pictures/flex_sensor.png}%imagine location
-	\caption{(a) Flex sensor, (b)voltage divider circuit, and (c) flex bend levels~\cite{10.3390/s18072208}}\label{fig:flex_sensor}%use name for ref.
+	\caption{(a) Flex sensor, (b)voltage divider circuit, and (c) flex bend levels\cite{10.3390/s18072208}}\label{fig:flex_sensor}%use name for ref.
 \end{figure}
 
 In this system,  flex sensors are attached along the dorsal side of each finger, from the base to the tip. Each flex sensor is incorporated into a voltage divider circuit, where it acts as the variable resistor. When a user flexes their finger, the corresponding change in resistance causes a drop in output voltage, which is sampled by the 12-bit ADC (Analog-to-Digital Converter) channels of the ESP32 microcontroller as shown in Fig.~\ref{fig:flex_sensor_bend}. This setup allows for precise real-time measurement of finger bending angles, translating physical finger positions into digital signals that can be used for gesture classification and interaction mapping within the VR environment.
@@ -45,11 +45,11 @@ By integrating flex sensors into the proposed device, the system accurately capt
 
 \newpage
 \subsection{Coin Vibration Motor}
-The coin vibration motor(Fig.~\ref{fig:coin_motor}), known as the Eccentric Rotating Mass (ERM) type, is used as the main actuator to provide vibrotactile feedback in the proposed wearable haptic device. This type of motor works by rapidly rotating an off-center mass attached to its shaft, which creates oscillations that produce tactile sensations on the skin. Coin motors are favored in wearable devices due to their compact circular shape, lightweight (typically weighing under 3 grams per motor), and straightforward driving circuitry. These features make them ideal for applications where form factor and mobility are crucial design considerations~\cite{coin_motor}.
+The coin vibration motor(Fig.~\ref{fig:coin_motor}), known as the Eccentric Rotating Mass (ERM) type, is used as the main actuator to provide vibrotactile feedback in the proposed wearable haptic device. This type of motor works by rapidly rotating an off-center mass attached to its shaft, which creates oscillations that produce tactile sensations on the skin. Coin motors are favored in wearable devices due to their compact circular shape, lightweight (typically weighing under 3 grams per motor), and straightforward driving circuitry. These features make them ideal for applications where form factor and mobility are crucial design considerations\cite{coin_motor}.
 
 \begin{figure}[H]\centering
 	\includegraphics[width=0.7\textwidth]{Pictures/coin_motor.jpg}%imagine location
-	\caption{The components of coin vibration motor~\cite{coin_motor}}\label{fig:coin_motor}%use name for ref.
+	\caption{The components of coin vibration motor\cite{coin_motor}}\label{fig:coin_motor}%use name for ref.
 \end{figure}
 
 In this system, as shown in Fig.~\ref{fig:coin_motor_2} 10 mm coin vibration motors that operate at a nominal voltage of 3 V are attached to the fingertip regions of the glove to enhance skin contact and tactile feedback. The motors are controlled using pulse width modulation signals generated by the ESP32 microcontroller. By adjusting the PWM duty cycle and frequency, the system can modulate the intensity and frequency of the vibrations, simulating different levels of surface smoothness or roughness in virtual environments.
@@ -65,16 +65,16 @@ Furthermore, their low power consumption supports prolonged use in battery-power
 %%%%%%%%%%%%%%%
 \newpage
 \subsection{MPU-6050}
-The MPU-6050 (Fig.~\ref{fig:mpu}) is integrated into the proposed wearable haptic system to ensure reliable and continuous tracking of hand orientation and movement dynamics. It features a highly integrated 6-axis Micro-Electro-Mechanical  (MEMS) System sensor, which includes both a 3-axis gyroscope and a 3-axis accelerometer in a single, compact module. This combination allows for the measurement of angular velocity and linear acceleration, which are crucial for detecting hand tilting, rotation, and motion trajectories during virtual interactions~\cite{mpu}.
+The MPU-6050 (Fig.~\ref{fig:mpu}) is integrated into the proposed wearable haptic system to ensure reliable and continuous tracking of hand orientation and movement dynamics. It features a highly integrated 6-axis Micro-Electro-Mechanical  (MEMS) System sensor, which includes both a 3-axis gyroscope and a 3-axis accelerometer in a single, compact module. This combination allows for the measurement of angular velocity and linear acceleration, which are crucial for detecting hand tilting, rotation, and motion trajectories during virtual interactions\cite{mpu}.
 
 \begin{figure}[H]\centering
 	\includegraphics[width=0.7\textwidth]{Pictures/mpu.png}%imagine location
-	\caption{MPU-6050~\cite{mpu}}\label{fig:mpu}%use name for ref.
+	\caption{MPU-6050\cite{mpu}}\label{fig:mpu}%use name for ref.
 \end{figure}
 
 The MPU-6050 features a compact footprint of 4×4×0.9 mm and low power consumption, making it ideal for wearable systems where minimizing size and energy usage is crucial for comfort and battery life. It connects to the ESP32 microcontroller through the I²C digital interface, which simplifies wiring and makes it easier to integrate into compact glove designs. The device's sampling rate can be configured to a maximum of 1 kHz, enabling high-frequency motion data acquisition that is essential for providing responsive and real-time haptic feedback.
 
-A key feature of the MPU-6050 is its Digital Motion Processor (DMP), an internal processor capable of performing sensor fusion algorithms such as gyroscope and accelerometer data filtering, tilt angle estimation, and motion tracking directly on-chip. This significantly reduces computational overhead on the ESP32 microcontroller, allowing more efficient handling of haptic feedback generation and wireless communication tasks~\cite{mpu6050datasheet}.
+A key feature of the MPU-6050 is its Digital Motion Processor (DMP), an internal processor capable of performing sensor fusion algorithms such as gyroscope and accelerometer data filtering, tilt angle estimation, and motion tracking directly on-chip. This significantly reduces computational overhead on the ESP32 microcontroller, allowing more efficient handling of haptic feedback generation and wireless communication tasks\cite{mpu6050datasheet}.
 
 In this system, IMU data complements flex sensor data to enhance the fidelity of gesture recognition and dynamic virtual object interaction. By being attached to the glove, the MPU-6050 provides continuous spatial orientation information such as wrist rotation and general hand movement, which cannot be captured by flex sensors alone. This integration ensures more natural and accurate virtual manipulation, especially during dynamic tasks. 
 
