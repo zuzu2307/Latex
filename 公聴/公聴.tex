@@ -58,7 +58,7 @@
 
 
 \section{Introduction}
-Virtual reality (VR) has become a powerful platform that offers immersive experiences across a range of applications, including gaming, training simulations, healthcare, education, and therapy\cite{10.3389/frobt.2016.00074}. 
+Virtual reality (VR) has become a powerful platform that offers immersive experiences across a range of applications, including gaming, training simulations, healthcare, education, and therapy.%\cite{10.3389/frobt.2016.00074}. 
 One important aspect of immersion is texture rendering, which is typically achieved through visual and auditory cues. Incorporating haptic feedback for realistic texture perception is a central focus of human-computer interaction (HCI) research, but it still presents challenges. Most existing methods rely on handheld devices, which often restrict natural hand movements.
 
 To overcome these limitations, this research investigates the development and performance of a wearable device equipped with flex sensors, a Motion Processing Unit (MPU), and a coin motor, enabling texture perception at three levels of vibration granularity.
@@ -72,7 +72,7 @@ To overcome these limitations, this research investigates the development and pe
 \section{Related Work}
 Previous research on haptic feedback in virtual reality (VR) has primarily focused on vibrotactile, force, and thermal methods to enhance tactile realism. Vibrotactile feedback\cite{10.1007/978-3-030-06134-0_25}, known for its compact size, affordability, and rapid response, effectively conveys textures and enhances immersion. A follow-up study\cite{10.1145/3025453.3025812} examines how vibrotactile parameters—such as granularity, amplitude, and timbre—affect texture perception by synchronizing vibrations with user movement. The study finds that granularity influences the perception of bumpiness or smoothness.
 
-To address these limitations, our study presents an innovative pulse-width modulation (PWM) method that modulates vibration cycle rates instead of amplitude or frequency. This approach significantly simplifies the hardware requirements, as it only necessitates one actuator per finger, while still allowing for precise differentiation of texture properties such as roughness and bumpiness. This solution offers a practical and responsive option for lightweight VR applications.
+In this research, I introduce an innovative pulse-width modulation (PWM) method that modulates vibration cycle rates, rather than using traditional methods like amplitude or frequency control. This approach greatly simplifies hardware requirements, as it requires only one actuator per finger. Despite this simplicity, it still enables precise differentiation of texture properties, such as bumpiness and smoothness.
 
 % Deep-Texture [1] renders shapes and textures of things in VR using a linear resonant actuator and a 1-bar mechanism, employing three frequencies for texture simulation. A follow-up study\cite{10.1145/3025453.3025812} examines how vibrotactile parameters (granularity, amplitude, timbre) affect texture perception by synchronizing vibrations with user movement, finding that granularity influences the perception of bumpiness or smoothness. This research develops a data glove leveraging Pulse Width Modulation (PWM) to modulate granularity for texture rendering and discusses the feasibility of PWM. PWM has the advantage of high tolerance for noise from frequent movement of wires that connect sensors and motors.
 
@@ -100,16 +100,14 @@ The wearable haptic feedback device developed in this study was linked to the ho
 
 Six male participants, aged 24 to 27, took part in a series of experiments to evaluate haptic feedback perception. The haptic feedback was generated using pulse-width modulation (PWM) at three different cycle rates: 0.2, 0.5, and 1.0, with a default frequency of ESP32 at 5000 Hz. Each cycle rate represented a distinct texture sensation.
 
-In the first experiment(Fig.~\ref{fig:ex1}), participants took part in a blind test designed to distinguish between three different types of haptic feedback. Before the test began, they were introduced to all three feedback options. In the virtual environment, a white 3D plane appeared, randomly generating one of the haptic feedback types upon contact with the virtual hand. Participants were then tasked with identifying the perceived feedback, repeating this process 15 times to evaluate their ability to differentiate between the options.
-
+In the first experiment(Fig.~\ref{fig:ex1}), participants took part in a blind test designed to distinguish between three different types of haptic feedback. Before the test began, they were introduced to all three feedback options. In the virtual environment, a white 3D plane appeared, randomly generating one of the haptic feedback types upon contact with the virtual hand. The participants identified the perceived feedback, repeating the process 15 times(5 times per cycle rate in random order) to assess their ability to differentiate between them.
 \begin{figure}[H]\centering
 	\includegraphics[width=0.3\textwidth]{Fig/ex1.png}%imagine location
 	\caption{Experimental setup for Experiment~1}\label{fig:ex1}%use name for ref.
 \end{figure}
 
 
-The second experiment(Fig.~\ref{fig:ex2}) investigated the relationship between haptic feedback and texture perception. Participants interacted with a textured 3D plane that featured three different materials: brick, grass, and marble. Each material had three varying levels of granularity, producing three distinct types of haptic feedback. After experiencing all three feedback options for a particular texture, participants were asked to select the one they felt best matched the material before moving on to the next texture.
-
+The result of experiment 1(Fig.~\ref{fig:C_W_ex1}) in identifying vibration cycle rates of 0.2, 0.5, and 1.0 revealed that higher-cycle rate vibrations were more accurately classified. The highest accuracy was at the 1.0 cycle rate, with participants correctly identifying the pattern in 26 out of 30 trials (86.7\%), suggesting that continuous and distinct tactile sensations from shorter pauses enhance perception. Accuracy slightly decreased at the 0.5 cycle rate (80\%) and was lowest at the 0.2 cycle rate (76.7\%), indicating difficulty in distinguishing slower, intermittent tactile sensations. Despite this decline, accuracy remained well above chance (33.3\%), indicating that pulse-width modulation effectively conveys distinct vibrotactile patterns, particularly at higher cycle rates, suitable for realistic virtual texture perception.
 \begin{figure}[H]\centering
 	\includegraphics[width=0.4\textwidth]{Fig/ex2.png}%imagine location
 	\caption{Experimental setup for Experiment~2}\label{fig:ex2}%use name for ref.
@@ -121,12 +119,12 @@ The second experiment(Fig.~\ref{fig:ex2}) investigated the relationship between 
 
 % The second experiment explored the relationship between haptic feedback and texture perception. The participants interacted with a textured 3D plane with  three different granularities of brick, grass, or marble, each generating three different haptic feedback. After experiencing all three feedback for a given texture, they were asked to select the one they felt best matched the material before proceeding to the next texture.\par
 
-They completed an evaluation questionnaire after the experiments. 					
+They completed a total of 12 evaluation questionnaires after the experiments. 			
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 
-The result of experiment 1(Fig.~\ref{fig:C_W_ex1}) in identifying vibration cycle rates of 0.2, 0.5, and 1.0 revealed that higher-cycle rate vibrations were more accurately classified. The highest accuracy was at the 1.0 cycle rate, with participants correctly identifying the pattern in 26 out of 30 trials (86.7\%), suggesting that continuous and distinct tactile sensations from shorter pauses enhance perception. Accuracy slightly decreased at the 0.5 cycle rate (80\%) and was lowest at the 0.2 cycle rate (76.7\%), indicating difficulty in distinguishing slower, intermittent tactile sensations. Despite this decline, accuracy remained well above chance (33.3\%), confirming that pulse-width modulation effectively conveys distinct vibrotactile patterns, particularly at higher cycle rates, suitable for realistic virtual texture perception.
+The result of experiment 1(Fig.~\ref{fig:C_W_ex1}) in identifying vibration cycle rates of 0.2, 0.5, and 1.0 revealed that higher-cycle rate vibrations were more accurately classified. The highest accuracy was at the 1.0 cycle rate, with participants correctly identifying the pattern in 26 out of 30 trials (86.7\%), suggesting that continuous and distinct tactile sensations from shorter pauses enhance perception. Accuracy slightly decreased at the 0.5 cycle rate (80\%) and was lowest at the 0.2 cycle rate (76.7\%), indicating difficulty in distinguishing slower, intermittent tactile sensations. Despite this decline, accuracy remained well above chance (33.3\%), indicating that pulse-width modulation effectively conveys distinct vibrotactile patterns, particularly at higher cycle rates, suitable for realistic virtual texture perception.
 
 % The results of experiment 1 indicate that in the blind test involving three haptic feedback, the  participants were able to distinguish between the lowest cycle rate (0.2) and the highest one (1.0), as shown in Fig.~\ref{fig:C_W_ex1}. However, the scores for the middle one (0.5) were similar to those of the lowest one. Some participants noted that the glove is too big for my hand, making it difficult to identify the granularities accurately. This may be due to the use of a standard glove with an attached component, which cannot be adjusted to fit every hand.\par
 
@@ -151,10 +149,10 @@ In contrast, all participants unanimously selected the highest cycle rate (1.0) 
 	\caption{Participant-selected cycle rates corresponding to virtual surface textures}\label{fig:ex2_results}
 \end{figure}
 
-The statistical analysis of the evaluation questionnaire data(Table~\ref{tab:wilcoxon_category_results}) was conducted across three categories: ``Hand Ownership and Control," ``Realistic and Aligned Tactile Sensations Felt," and ``Immersion." The Wilcoxon Signed-Rank tests compared the results to a neutral baseline of 4.0.
-In the ``Hand Ownership and Control" category, participants rated their experiences significantly lower than the neutral baseline, with a median score of 3.0 ($p=0.000275$). This indicates limited feelings of virtual hand ownership and control, likely influenced by ergonomic issues related to the fit of the gloves.
-Conversely, the ``Realistic and Aligned Tactile Sensations Felt" category received significantly higher ratings, with a median score of 5.0 ($p=0.000041$). This confirms the successful delivery of realistic tactile sensations to the participants.
-The ``Immersion" category showed no significant difference from the neutral baseline, with a median score of 4.0 ($p=0.102470$), indicating that the level of immersion was moderate.
+The statistical analysis of the evaluation questionnaire data (Table~\ref{tab:wilcoxon_category_results}) was conducted across three categories: ``Hand Ownership and Control," ``Realistic and Aligned Tactile Sensations Felt," and ``Immersion." A Wilcoxon Signed-Rank test was used to compare each category’s median score against a neutral baseline of 4.0, the midpoint of the 1–7 Likert scale used in the survey.
+In the ``Hand Ownership and Control" category, participants rated their experiences significantly lower than the neutral baseline, with a median score of 3.0 ($p<0.001$). This indicates limited feelings of virtual hand ownership and control, likely influenced by ergonomic issues related to the fit of the gloves.
+Conversely, the ``Realistic and Aligned Tactile Sensations Felt" category received significantly higher ratings, with a median score of 5.0 ($p<0.001$). This indicates the successful delivery of realistic tactile sensations to the participants.
+The ``Immersion" category showed no significant difference from the neutral baseline, with a median score of 4.0 ($p>0.05$), indicating that the level of immersion was moderate.
 Overall, these results highlight the effectiveness of the system in providing tactile realism, while also emphasizing the need for ergonomic improvements to enhance the feeling of embodiment and overall immersion in future prototypes.
 \begin{table}[H]
   \small
@@ -172,7 +170,7 @@ Overall, these results highlight the effectiveness of the system in providing ta
         Immersion & 12 & 4.0 & 0.102470 & & No sig. diff. \\
         \bottomrule
     \end{tabular}
-    \caption*{Note: Significance levels: $^* p < 0.05$, $^{**} p < 0.01$, $^{***} p < 0.001$. The `N' value represents the total count of individual questionnaire responses comprising each category (number of items in category $\times$ number of participants).``Hand and Control" refers to the category of "Hand Ownership and Control," while "Realistic Felt" refers to the category of "Realistic and Aligned Tactile Sensations Felt." }
+    \caption*{Note: Significance levels: $^* p < 0.05$, $^{**} p < 0.01$, $^{***} p < 0.001$. The `N' value represents the total count of individual questionnaire responses comprising each category (number of questions in the category $\times$ number of participants).``Hand and Control" refers to the category of "Hand Ownership and Control," while "Realistic Felt" refers to the category of "Realistic and Aligned Tactile Sensations Felt." }
 \end{table}
 
 % \begin{figure}[h]
@@ -191,17 +189,17 @@ Overall, these results highlight the effectiveness of the system in providing ta
 \section{Conclusion}
 This study aimed to enhance immersion in virtual reality by using a wearable haptic glove equipped with flex sensors, an MPU-6050 IMU, and coin-type vibration motors. The glove employed pulse-width modulation (PWM) to generate tactile feedback. 
 Experimental results showed that participants could reliably distinguish between vibration cycle rates that corresponded to textures of varying smoothness, achieving higher accuracy with increased rates. An evaluation questionnaire indicated that the realism of the tactile feedback was significantly higher compared to a neutral baseline.
-Future work will focus on optimizing vibration parameters, exploring additional virtual textures, directly comparing PWM-based feedback with other haptic methods, expanding the number of participants for greater statistical robustness, and implementing adaptive feedback algorithms to further enhance immersion and interactivity.
+Future work will focus on optimizing vibration parameters, exploring additional virtual textures, directly comparing PWM-based vibration feedback with other haptic methods, expanding the number of participants for greater statistical robustness, and implementing adaptive feedback algorithms to further enhance immersion and interactivity.
 % The results show that participants could distinguish between the lowest cycle rate (0.2) and highest one (1.0) of haptic. Additionally, material smoothness influenced preferred cycle rate, with marble aligning with 1.0 cycle rate, grass with 0.5 cycle rate. These findings highlight the feasibility of PWM for haptic rendering of textures.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliographystyle{ieeetr}
-\footnotesize
+\scriptsize
 \bibliography{ref}
 \section*{Publication}
-  \footnotesize
+  \scriptsize
 	\begin{enumerate}
-		\bibitem[X]{ieice} K. Witchuvanit and M. Ishihara, “Wearable haptic feedback glove for texture rendering in virtual reality,” in Complex, Intelligent and Software Intensive Systems, Springer Nature Switzerland, 2025, pp. 123–132, isbn: 978-3-031-96099-4.
+		\bibitem[3]{ieice} K. Witchuvanit and M. Ishihara, “Wearable haptic feedback glove for texture rendering in virtual reality,” in Complex, Intelligent and Software Intensive Systems, Springer Nature Switzerland, 2025, pp. 123–132, isbn: 978-3-031-96099-4.
 	\end{enumerate}
 
 \end{document}
