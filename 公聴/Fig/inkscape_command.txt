@@ -1,0 +1,1 @@
+inkscape -D ex2_result.svg  -o ex2_result.pdf --export-latex
