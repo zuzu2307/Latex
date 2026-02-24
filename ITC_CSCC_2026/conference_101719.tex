@@ -11,64 +11,62 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Conference Paper Title*\\
-{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
-should not be used}
-\thanks{Identify applicable funding agency here. If none, delete this.}
+\title{Enhancing Perception of Recessed Features in VR Haptics through Vibrotactile Attenuation\\
+% {\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
+% should not be used}
+% \thanks{Identify applicable funding agency here. If none, delete this.}
 }
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\author{\IEEEauthorblockN{1\textsuperscript{st} Korntawat Witchuvanit}
+\IEEEauthorblockA{\textit{Dept. of Intelligent Information Systems Engineering} \\
+\textit{Fukuoka Institute of Technology}\\
+Fukuoka, Japan \\
+bd25201@bene.fit.ac.jp}
 \and
-\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\IEEEauthorblockN{2\textsuperscript{nd} Makio Ishihara}
+\IEEEauthorblockA{\textit{Faculty of Information Engineering} \\
+\textit{Fukuoka Institute of Technology}\\
+Fukuoka, Japan \\
+m-ishihara@bene.fit.ac.jp}
+% \and
+% \IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
+% \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+% \textit{name of organization (of Aff.)}\\
+% City, Country \\
+% email address or ORCID}
+% \and
+% \IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
+% \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+% \textit{name of organization (of Aff.)}\\
+% City, Country \\
+% email address or ORCID}
+% \and
+% \IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
+% \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+% \textit{name of organization (of Aff.)}\\
+% City, Country \\
+% email address or ORCID}
+% \and
+% \IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
+% \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+% \textit{name of organization (of Aff.)}\\
+% City, Country \\
+% email address or ORCID}
 }
 
 \maketitle
 
 \begin{abstract}
-This document is a model and instructions for \LaTeX.
-This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
-or Math in Paper Title or Abstract.
+Realistic texture perception poses a significant challenge in Virtual Reality (VR) haptics, particularly when it comes to representing subtle geometric variations, such as surface dents or holes. Traditionally, VR haptic systems employ vibrotactile intensification, which increases the vibration frequency when a virtual fingertip makes contact with a raised feature or edge. However, the effectiveness of this method for conveying recessed features remains unclear. We propose a vibrotactile attenuation strategy, which reduces the vibration frequency when the user's virtual fingertip interacts with a recessed area. Our findings indicate that this reduction in frequency effectively helps participants perceive the presence of a recessed surface.
 \end{abstract}
 
 \begin{IEEEkeywords}
-component, formatting, style, styling, insert
+Virtual Reality, Haptic, Texture Rendering, Vibration Feedback
 \end{IEEEkeywords}
 
 \section{Introduction}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits. 
+Achieving realistic physical interactions in Virtual Reality (VR) relies heavily on accurately perceiving texture and surface geometry. While visual and auditory fidelity have advanced significantly, the sense of touch often falls short, limiting the effectiveness of immersive applications such as surgical training and virtual prototyping [1]. Current haptic technologies primarily focus on vibrotactile enhancement, which involves increasing the frequency or amplitude of vibrations to simulate raised features like bumps and edges [2]. While this method is effective for conveying positive geometric variations, it struggles to intuitively communicate subtle recessed features, such as dents or holes. This absence of a distinct sensory cue for depression creates a significant gap in the realism of virtual tactile feedback [3].
+To address the uncertainty regarding tactile feedback, we propose a vibrotactile attenuation strategy that connects recessed features with a decrease in frequency. Our experimental framework consists of three distinct conditions. We establish a baseline frequency of 150 Hz for flat surfaces and employed a 250 Hz "Strong Frequency" for peaks. Notably, we introduce a 50 Hz "Low Frequency" condition for recessed areas to simulate the sensation of contact loss. This study compares these attenuation and intensification strategies to evaluate whether reducing frequency provides a more intuitive representation of concave geometries compared to traditional methods.
 
 \section{Ease of Use}
 
