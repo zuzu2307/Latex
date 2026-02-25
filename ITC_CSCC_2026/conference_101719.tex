@@ -10,6 +10,9 @@
 \usepackage{multirow}
 \usepackage{booktabs}
 \usepackage{adjustbox}
+\usepackage{array}
+\usepackage{svg}
+\usepackage{float}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -60,7 +63,11 @@ m-ishihara@bene.fit.ac.jp}
 \maketitle
 
 \begin{abstract}
-Realistic texture perception poses a significant challenge in Virtual Reality (VR) haptics, particularly when it comes to representing subtle geometric variations, such as surface dents or holes. Traditionally, VR haptic systems employ vibrotactile intensification, which increases the vibration frequency when a virtual fingertip makes contact with a raised feature or edge. However, the effectiveness of this method for conveying recessed features remains unclear. We propose a vibrotactile attenuation strategy, which reduces the vibration frequency when the user's virtual fingertip interacts with a recessed area. Our findings indicate that this reduction in frequency effectively helps participants perceive the presence of a recessed surface.
+Realistic texture perception poses a significant challenge in Virtual Reality (VR) haptics, particularly when it comes to representing subtle geometric variations, such as surface dents or holes. 
+Traditionally, VR haptic systems employ vibrotactile intensification, which increases the vibration frequency when a virtual fingertip makes contact with a raised feature or edge. 
+However, the effectiveness of this method for conveying recessed features remains unclear. 
+We propose a vibrotactile attenuation strategy, which reduces the vibration frequency when the user's virtual fingertip interacts with a recessed area. 
+Our findings indicate that this reduction in frequency effectively helps participants perceive the presence of a recessed surface.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -68,103 +75,152 @@ Virtual Reality, Haptic, Texture Rendering, Vibration Feedback
 \end{IEEEkeywords}
 
 \section{Introduction}
-Achieving realistic physical interactions in Virtual Reality (VR) relies heavily on accurately perceiving texture and surface geometry. While visual and auditory fidelity have advanced significantly, the sense of touch often falls short, limiting the effectiveness of immersive applications such as surgical training and virtual prototyping \cite{10.1146/annurev-control-060117-105043}. Current haptic technologies primarily focus on vibrotactile enhancement, which involves increasing the frequency or amplitude of vibrations to simulate raised features like bumps and edges \cite{10.1162/1054746041944867}. While this method is effective for conveying positive geometric variations, it struggles to intuitively communicate subtle recessed features, such as dents or holes. This absence of a distinct sensory cue for depression creates a significant gap in the realism of virtual tactile feedback \cite{10.3758/APP.71.7.1439}.
+Achieving realistic physical interactions in Virtual Reality (VR) relies heavily on accurately perceiving texture and surface geometry. 
+While visual and auditory fidelity have advanced significantly, the sense of touch often falls short, limiting the effectiveness of immersive applications such as surgical training and virtual prototyping~\cite{doi:10.34133/research.0333}. 
+Haptics broadly includes both force feedback, which simulates object hardness, weight, and inertia, and tactile feedback, which simulates surface contact, geometry, and texture~\cite{10.1016/S0097-8493}. 
+Although modern VR environments effectively utilize stereoscopic displays and 3D spatial audio, the haptic channel remains a key limitation, as it must deliver real-time interactions to maintain physical consistency~\cite{10.1162/1054746041944867}.
+
+Research has shown that humans are highly sensitive to vibration signals, which are detected by mechanoreceptors in the skin—specifically, fast-adapting (FA) receptors like Meissner and Pacinian corpuscles~\cite{10.1007/978-1-4471-6533-0_3}.
+While this method effectively conveys positive geometric variations, such as peaks, it struggles to accurately represent subtle recessed features like dents or holes. The lack of a clear, perceptually intuitive sensory cue for surface depressions creates a significant gap in the realism of virtual tactile feedback~\cite{10.3758/APP.71.7.1439}.
+
 To address the uncertainty regarding tactile feedback, we propose a vibrotactile attenuation strategy that connects recessed features with a decrease in frequency. Our experimental framework consists of three distinct conditions. We establish a baseline frequency of 150 Hz for flat surfaces and employed a 250 Hz "Strong Frequency" for peaks. Notably, we introduce a 50 Hz "Low Frequency" condition for recessed areas to simulate the sensation of contact loss. This study compares these attenuation and intensification strategies to evaluate whether reducing frequency provides a more intuitive representation of concave geometries compared to traditional methods.
 
+\section{Realated Work}
+\subsection{Challenges in Non-Planar Geometry Perception}
+While intensification techniques are effective for highlighting raised features, representing recessed geometries—such as pits, holes, or dents—remains a significant challenge. 
+Although intensification provides a clear cue for an edge, it does not adequately signal the "void" that follows, leading to a perceptual mismatch wherein the recessed area can appear indistinguishable from a flat surface.
+
+Recent empirical evaluations of haptic rendering across various devices have highlighted this issue, demonstrating that current systems struggle to maintain high-fidelity texture rendering when virtual geometry transitions from raised to recessed features~\cite{Fazlollahi25-WHCWIP-Quality}. 
+These findings indicate that relying solely on additive energy (intensification) limits the depth and accuracy of a user's spatial exploration in virtual environments.
+
+\subsection{Psychophysics of Spatiotemporal Cues}
+To understand the limits of tactile perception, it is essential to recognize the psychophysical mechanisms at play. 
+Research by Ujitoko et al.~\cite{10.1109/TOH.2024.3352042} has demonstrated that human tactile perception is not only influenced by absolute intensity but is also highly responsive to the spatiotemporal relationship between force intensity and the speed of tactile motion. 
+Their findings suggest that the brain interprets complex geometric features through subtle temporal modulations of sensory input. 
+Building on this work, our proposed vibrotactile attenuation strategy shifts away from traditional models that focus on intensification. 
+Instead, it leverages the absence of stimulus as a distinct signal for recessed spatial features, effectively utilizing the brain's ability to perceive relative decreases in mechanical energy as indicators of geometric depth.
+
 \section{Methodology}
-To evaluate the effectiveness of vibrotactile attenuation, we develop a custom haptic interface integrated with a virtual environment. The hardware system utilizes a Meta Quest 3 Head-Mounted Display (HMD) for immersive visualization and high-fidelity hand tracking. For tactile delivery, a single Eccentric Rotating Mass (ERM) coin-type motor is secured to the participant's index finger and driven by an ESP32 microcontroller (Fig. 1). The virtual environment features a large, flat gray surface and includes three types of surfaces: the Base Surface (flat region), the Recess (hole), and the Peak (bump). 
+To evaluate the effectiveness of vibrotactile attenuation, we develop a custom haptic interface integrated with a virtual environment. The hardware system utilizes a Meta Quest 3 Head-Mounted Display (HMD) for immersive visualization and high-fidelity hand tracking. For tactile delivery, a single Eccentric Rotating Mass (ERM) coin-type motor is secured to the participant's index finger and driven by an ESP32 microcontroller (Figure~\ref{fig:device}). The virtual environment features a large, flat gray surface and includes three types of surfaces: the Base Surface (flat region), the Recess (hole), and the Peak (bump). 
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=0.25\textwidth]{Figure/Device.jpg}}
 \caption{The Haptic Device.}
-\label{Fig_1}
+\label{fig:device}
 \end{figure}
 
 The microcontroller is programmed to instantly adjust the motor frequency based on the virtual fingertip's position relative to the surface. This approach aims at stimulating specific mechanoreceptors, enabling realistic texture perception by utilizing distinct frequency tiers. The control logic is implemented as follows:
+
 \begin{itemize}
     \item Base Surface (150 Hz): When contact is made with a flat area, the motor activates a mid-range frequency to indicate the smooth surface
     \item Recess (50 Hz): When entering a depression, the system adjusts the vibration frequency to 50 Hz to provide vibrotactile attenuation. 
     \item Peak (250 Hz): When entering a raised bump, the system increases the vibration frequency to 250 Hz for vibrotactile intensification.
 \end{itemize}
 
+Figure~\ref{fig:experiment_setup} shows the experimental setup, highlighting participant interaction with the haptic device in the virtual environment.
+\begin{figure}[htbp]
+        \centerline{\includegraphics[width=0.35\textwidth]{Figure/Experiment.jpg}}
+        \caption{Overall experimental setup demonstrating participant interaction}
+        \label{fig:experiment_setup}
+    \end{figure}
+
+
 \section{Procedure}
 A total of 13 students studying abroad (12 males and 1 female, aged 22 to 27 years) are recruited from the university campus. The experiment follows a systematic five-step procedure to ensure participants could accurately distinguish between the vibrotactile cues:
 
 \begin{enumerate}
     \item Participants attach all the equipment
-    \item Participants are introduced to the three states of vibration indicated by the different colors of the sphere that appear based on the state assigned to them (Fig. 2). 
+    \item Participants are introduced to the three states of vibration indicated by the different colors of the sphere that appear based on the state assigned to them (Figure~\ref{fig:3_surface}). 
     \begin{itemize}
-        \item When a participant touches the gray surface, the vibration is set to a base surface vibration of 150 Hz (Fig. 2a). 
-        \item When the hand touches the red sphere, the vibration changes to 50 Hz, representing a recess in the surface (Fig. 2b).
-        \item When the hand touches the blue sphere, the vibration shifts to 250 Hz, representing a peak on the surface (Fig. 2c).
+        \item When a participant touches the gray surface, the vibration is set to a base surface vibration of 150 Hz (Figure~\ref{fig:3_surface}(a)). 
+        \item When the hand touches the red sphere, the vibration changes to 50 Hz, representing a recess in the surface (Figure~\ref{fig:3_surface}(b)).
+        \item When the hand touches the blue sphere, the vibration shifts to 250 Hz, representing a peak on the surface (Figure~\ref{fig:3_surface}(c)).
     \end{itemize}
 
     \begin{figure}[htbp]
         \centerline{\includegraphics[width=0.5\textwidth]{Figure/3_surface.png}}
         \caption{(a) Base Surface, (b) Recess Surface, (c) Peak Surface}
-        \label{Fig_2}
+        \label{fig:3_surface}
     \end{figure}
 
     \item After introducing the three states of vibration, the experiment commences. During the actual experiment, participants cannot see any colored spheres. They move their fingers to touch and swipe across the surface, then respond to whether they feel any holes on the surface. If they do not feel any holes, the surface will either have peaks or be flat.
     \item The experiment consists of 30 trials (3 sets; 10 trials per set; 3-minute breaks between each set). There are 10 base surfaces, 10 recess surfaces, and 10 peak surfaces, presented in a random order.
-    \item After completing 30 trials, each participant fills out 8 questionnaires, using a 7-point Likert scale. Each two questions are grouped into one of four- categories. 
 \end{enumerate}
 
-\section{Result}
-The experiment showcased nearly perfect classification performance in distinguishing the recess surface condition from other surfaces. Table 1 presents the confusion matrix summarizing participants' responses on whether the surface they touched had any holes. The results indicated that participants were able to effectively differentiate the recess surface from the others, demonstrating exceptional performance and reliability across the board. This high accuracy was evidenced by a Recall score of 1.0, a strong Precision of 0.963, and a Specificity of 0.981.
+After completing 30 trials, each participant fills out eight questionnaires, as detailed in Table~\ref{Table:Questionnaire}. Each statement is rated on a Likert scale, ranging from 1 (strongly disagree) to 7 (strongly agree). 
+The questionnaires are based on the framework for evaluating tactile perception in virtual environments proposed by Tzimos et al.~\cite{10.3390/electronics13183775}. 
+They are designed to assess specific perceptual dimensions, including physical realism, the ability to distinguish between geometric features (such as peaks and recesses), 
+and overall system comfort. This approach draws on established principles for assessing presence, as described by Witmer and Singer~\cite{10.1162/105474698565686}. 
 
-\begin{table}[h]
-\centering
-\caption{Participants Answer Confusion Matrix}
-\begin{tabular}{|l|c|c|}
+\begin{table}[htbp]
+\caption{Questionnaire}
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|m{7cm}|}
 \hline
-\multirow{2}{*}{Participants' Answer} & \multicolumn{2}{c|}{Actual Answer} \\ \cline{2-3}
- & Recess Surface & Other Surfaces \\ \hline
+\textbf{Question}&\textbf{Statement} \\\hline
+Q1 & The haptic signal clearly conveyed the presence of a recess (hole). \\\hline
+Q2 & The recess felt realistic and believable. \\\hline
+Q3 & The sensation felt when touching the recess was dull, soft, and lacking in sharp detail. \\\hline
+Q4 & The haptic signal clearly conveyed the presence of a peak (spike). \\\hline
+Q5 & The peak felt sharp and had a high level of detail. \\\hline
+Q6 & The sensation of the recess was clearly distinct from the sensation of the peak. \\\hline
+Q7 & The overall system (VR headset and motor) was comfortable to use. \\\hline
+Q8 & I was able to easily distinguish between the three different surfaces. \\\hline
+\end{tabular}
+\label{Table:Questionnaire}
+\end{center}
+\end{table}
+
+The questions are grouped into four categories: Feeling Holes (Q1, Q3), Feeling Peaks (Q4, Q5), Feeling Surface Differences (Q6, Q8), and Immersion (Q2, Q7).
+
+
+\section{Result}
+The experiment showcased nearly perfect classification performance in distinguishing the recess surface condition from other surfaces. Table~\ref{Table:ConfusionMatrix} presents the confusion matrix summarizing participants' responses on whether the surface they touched had any holes. The results indicated that participants were able to effectively differentiate the recess surface from the others, demonstrating exceptional performance and reliability across the board. This high accuracy was evidenced by a Recall score of 1.0, a strong Precision of 0.963, and a Specificity of 0.981.
+
+\begin{table}[htbp]
+\caption{Participants Answer Confusion Matrix}
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|m{3cm}|c|c|}
+\hline
+\textbf{Participants'}&\multicolumn{2}{|c|}{\textbf{Actual Answer}} \\
+\cline{2-3} 
+\textbf{Answer} & \textbf{\textit{Recess Surface}}& \textbf{\textit{Other Surfaces}} \\
+\hline
 Feeling holes on surface & 130 & 5 \\ \hline
 Not feeling any holes on surface & 0 & 255 \\ \hline
 \end{tabular}
+\label{Table:ConfusionMatrix}
+\end{center}
 \end{table}
 
-The results of the questionnaire were analyzed using Wilcoxon signed-rank tests to determine whether participants' perceptual ratings significantly differed from the neutral midpoint (4) of the Likert scale. For all categories, the findings consistently demonstrated strong support for the proposed attenuation strategy, as shown in Table 2.
+To further evaluate the tactile signatures, the mean surface scores reported by participants are shown in Figure~\ref{fig:Exp_results}. 
+The 'Recess' condition received the highest mean score; however, the data indicated some overlap in participants' perceptions between the 'Base' and 'Recess' conditions. 
+This similarity in subjective ratings suggests that, while the differences between the surface geometries are generally clear, the boundaries of tactile perception can be nuanced. 
+This complexity may explain the limited instances of false positives observed in the confusion matrix.
+\begin{figure}[H]
+    \centering
+	\includesvg[width=0.45\textwidth, inkscapelatex=true]{figure/Exp_ans.svg}
+	\caption{The mean surface scores reported by participants}
+    \label{fig:Exp_results}
+\end{figure}
+
+
+The results of the questionnaire were analyzed using Wilcoxon signed-rank tests to determine whether participants' perceptual ratings significantly differed from the neutral midpoint (4) of the Likert scale. For all categories, the findings consistently demonstrated strong support for the proposed attenuation strategy, as shown in Table~\ref{Table:WilcoxonResults}.
 
 Participants reported a significantly enhanced perception of holes ($p = 2.98 \times 10^{-8}$), peaks ($p = 2.98 \times 10^{-8}$), and surface differences ($p = 2.98 \times 10^{-8}$), all of which were significantly higher than the neutral reference level. Additionally, overall immersion was also rated significantly above neutral ($p = 2.98 \times 10^{-8}$).
 
-% \begin{table}[h]
-% \centering
-% \caption{Wilcoxon Signed-Rank Test Results for Questionnaire Categories}
+% The questionnaire results were analyzed using Wilcoxon signed-rank tests to assess whether participants' perceptual ratings significantly deviated from the neutral midpoint (4.0) of the Likert scale. 
+% As summarized in Table~\ref{Table:WilcoxonResults}, the findings consistently provided strong support for the proposed attenuation strategy, with all categories reaching significance at ($2.98 \times 10^{-8}$ ).
 
-% \begin{tabular}{p{2cm}ccccp{2cm}}
-% \toprule
-% Category & N & Median & $p$-value & Sig. & Conclusion \\
-% \midrule
-
-% Feeling Holes 
-% & 26 & 5.0 & $2.98\times10^{-8}$ & *** & Significantly higher than Neutral. \\
-
-% Feeling Peaks 
-% & 26 & 6.0 & $2.98\times10^{-8}$ & *** & Significantly higher than Neutral. \\
-
-% Feeling Surface’s Difference 
-% & 26 & 6.0 & $2.98\times10^{-8}$ & *** & Significantly higher than Neutral. \\
-
-% Immersion 
-% & 26 & 5.0 & $2.98\times10^{-8}$ & *** & Significantly higher than Neutral. \\
-% \bottomrule
-% \end{tabular}
-
-% \vspace{4pt}
-% \footnotesize{Note: Significance levels: *$p<0.05$, **$p<0.01$, ***$p<0.001$.}
-
-% \end{table}
-
-\begin{table}[h]
-\centering
+\begin{table}[htbp]
 \caption{Wilcoxon Signed-Rank Test Results for Questionnaire Categories}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|p{2cm}|c|c|c|c|p{2cm}|}
+\begin{center}
+\begin{tabular}{|m{1.7cm}|c|m{0.8cm}|c|c|m{1.7cm}|}
 \hline
-Category & N & Median & $p$-value & Sig. & Conclusion \\ \hline
-
+\textbf{Category}&\textbf{N}&\textbf{Median}&\textbf{$p$-value}&\textbf{Sig.}&\textbf{Conclusion} \\\hline
 Feeling Holes 
 & 26 & 5.0 & $2.98 \times 10^{-8}$ & *** 
 & Significantly higher than Neutral. \\ \hline
@@ -181,16 +237,35 @@ Immersion
 & 26 & 5.0 & $2.98 \times 10^{-8}$ & *** 
 & Significantly higher than Neutral. \\ \hline
 
+% \multicolumn{4}{l}{Note: Significance levels: *$p<0.05$, **$p<0.01$, ***$p<0.001$.}
 \end{tabular}
-
-\vspace{4pt}
+\label{Table:WilcoxonResults}
+\end{center}
+\vspace{-8pt}
 \footnotesize{Note: Significance levels: *$p<0.05$, **$p<0.01$, ***$p<0.001$.}
 \end{table}
 
-\section*{DISCUSSION AND CONCLUSION}
+% The mean scores and standard deviations for each question, as shown in Figure \ref{fig:Q_results}, provide additional details about these ratings.
+% In the category of Feeling Holes, participants provided mean ratings of $5.08$ for Question 1 and $5.31$ for Question 3. 
+% For the category of Feeling Peaks, Questions 4 and 5 received the highest ratings, with mean scores of $6.46$ and $6.31$, respectively. 
+% In the Feeling Surface Differences category, Questions 6 and 8 were rated at $5.62$ and $5.54$. 
+% Finally, the category of Immersion, encompassing Questions 2 and 7, received mean scores of $5.23$ for both items.
 
-The experimental results confirmed the effectiveness of the vibrotactile attenuation strategy, achieving nearly perfect classification for recessed features, with a Recall of 1.0 and a Specificity of 0.981. By reducing the frequency to 50 Hz, the system established a clear sensory boundary, eliminating the confusion often associated with traditional intensification methods. These metrics indicated a clear and distinct perceptual boundary between recess and non-recess surfaces.
+% \begin{figure}[H]
+%     \centering
+% 	\includesvg[width=0.5\textwidth, inkscapelatex=true]{figure/Q_ans.svg}
+% 	\caption{Questionnaire results showing mean scores for each question}
+%     \label{fig:Q_results}
+% \end{figure}
+
+\section{Discussion and Conclusion}
+
+The experimental results confirmed the effectiveness of the vibrotactile attenuation strategy in identifying surface features. By setting the frequency to 50 Hz, the system established a distinct sensory boundary, achieving nearly perfect classification of recessed features with a Recall of 1.0 and a Specificity of 0.981. This approach successfully reduced the confusion typically associated with traditional signal intensification methods.
+
+Despite a high level of proficiency, the analysis revealed a minor occurrence of false positives, where "Base" surfaces were sometimes incorrectly identified as having holes. Feedback from participants indicates that these errors were not caused by cognitive misjudgment from participants, but rather by temporary technical artifacts within the haptic interface. Specifically, momentary lapses in the tactile feedback—occurring during transitions of the virtual hand model—created noticeable "gaps."
+
 The results of the questionnaire supported this finding, as Wilcoxon signed-rank tests showed significant perceptual differences across all evaluated categories. Participants reported a substantially enhanced perception of holes, peaks, and surface differences, along with heightened immersion, with all ratings significantly surpassing the neutral midpoint. 
+
 In conclusion, this study showed that mapping surface depressions to a low-frequency (50 Hz) cue created a more intuitive sensory experience compared to traditional methods. By moving beyond the typical "intensification-only" approach, this research offers a more nuanced sensory cue for haptic interactions. In the future, we plan to explore the integration of this attenuation strategy with variable indentation depths and different material textures to enhance the realism of virtual tactile experiences.
 
 
@@ -198,6 +273,24 @@ In conclusion, this study showed that mapping surface depressions to a low-frequ
 
 \bibliographystyle{IEEEtran}
 \bibliography{Ref}
+
+% \begin{table}[htbp]
+% \caption{Table Type Styles}
+% \begin{center}
+% \begin{tabular}{|c|c|c|c|}
+% \hline
+% \textbf{Table}&\multicolumn{3}{|c|}{\textbf{Table Column Head}} \\
+% \cline{2-4} 
+% \textbf{Head} & \textbf{\textit{Table column subhead}}& \textbf{\textit{Subhead}}& \textbf{\textit{Subhead}} \\
+% \hline
+% copy& More table copy$^{\mathrm{a}}$& &  \\
+% \hline
+% \multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+% \end{tabular}
+% \label{tab1}
+% \end{center}
+% \end{table}
+
 % \begin{thebibliography}{00}
 % \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
 % \bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
